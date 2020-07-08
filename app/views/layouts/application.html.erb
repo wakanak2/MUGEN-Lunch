@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mugen</title>
+    <title>mugen_lunch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,29 @@
   </head>
 
   <body>
+     <header>
+      <% if user_signed_in? %>
+      <div class="header-content">
+        <ul>
+          <p>ようこそ、<%= current_user.name_kanji %>さん</p>
+          <li><%= link_to "マイページ", user_path(current_user) %></li>
+          <li><%= link_to "お気に入り", favorites_path %></li>
+          <li><%= link_to "投稿一覧", posts_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
+
+        <% else %>
+        <ul>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "店舗一覧", restaurants_path %></li>
+          <li><%= link_to "アバウト", about_path %></li>
+        </ul>
+      </div>
+      <% end %>
+
+     </header>
+
     <%= yield %>
   </body>
 </html>

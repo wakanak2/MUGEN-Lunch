@@ -1,0 +1,6 @@
+<% if resouce.errors.any? %>
+	<h2>エラーがあります。エラー内容をご確認ください。</h2>
+	<% resouce.errors.full_messages.each do |message| %>
+		<% message %>
+	<% end %>
+<% end %>

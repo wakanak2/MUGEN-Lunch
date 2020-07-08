@@ -1,0 +1,8 @@
+<h2>店舗情報登録</h2>
+
+<% render "layouts/error", resouce: @restaurant %>
+
+<p>基本情報</p>
+
+<% render "restaurants/form", restaurant: @restaurant, url: restaurant_path(@restaurant), submit: '新規登録'%>
+
