@@ -1,2 +1,70 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <h2>USER EDIT</h2>
+
+      <div class="inner">
+        <div class="user-edit">
+      <%= form_for(@user, url:user_path) do |f| %>
+                <%= render "layouts/error", resouce: @user %>
+
+            <table>
+              <thead>
+                <th class="th-w30"></th>
+                <th class="th-w70"></th>
+               </thead>
+
+              <tbody>
+                <tr>
+                    <td><%= attachment_image_tag @user, :user_image, size:"150x150", fallback: "no_image.png",class: "user-image"%></td>
+                    <td> <%= f.attachment_field :user_image %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :user_name, "ユーザ名" %></td>
+                    <td><%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                    <td><%= f.label :name, "名前（漢字）" %></td>
+                    <td><%= f.text_field :name_kanji, autofocus: true, autocomplete: "name", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                  <td><%= f.label :name_kana, "名前（カナ）" %></td>
+                  <td><%= f.text_field :name_kana, autofocus: true, autocomplete: "name_kana", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                  <td><%= f.label :email, "メールアドレス" %></td>
+                  <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                  <td><%= f.label :introduction, "紹介" %></td>
+                  <td><%= f.text_field :introduction, autocomplete: "introduction", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                  <td>Myポイント</td>
+                </tr>
+
+                <tr>
+                  <td><%= f.label :mypoint_postcode, "郵便番号" %><br /><i>(ハイフンなし７桁）</i></td>
+                  <td><%= f.text_field :mypoint_postcode, autocomplete: "mypoint_postcode", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                  <td><%= f.label :mypoint_address, "住所" %></td>
+                  <td><%= f.text_field :mypoint_address, autocomplete: "mypoint_address", class: "user-form" %></td>
+                </tr>
+
+                <tr>
+                  <td colspan="2">退会ご希望の方はこちらから<%= link_to "退会する",confirm_unsubscribe_path(@user) %></td>
+              </tbody>
+            </table>
+        </div>
+      </div>
+        <%= f.submit "更新する",class: "btn-1" %>
+      <% end %>
+      
+      
+
+</div>

@@ -1,0 +1,49 @@
+<div class="p-info-innner">
+	<table class="post-form">
+		<thead>
+			<th class="th-w30"></th>
+			<th class="th-w70"></th>
+
+		</thead>
+
+		<tbody>
+			<tr>
+				<td><%= attachment_image_tag user.user_image ,:user_image, size:"100x100" ,fallback:"no_image.png", class: "user-image"%></td>
+				<td><%= user.user_name %></td>
+			</tr>
+
+			<tr>
+				<td>評価</td>
+				<td ><%= post.rate %></td>
+			</tr>
+
+			<tr>
+				<td>提供時間</td>
+				<td><%= post.time %>分</td>
+			</tr>
+
+			<tr>
+				<td>価格</td>
+				<td><%= post.price %>円</td>
+			</tr>
+
+			<tr>
+				<td>コメント</td>
+				<td><%= post.comment %></td>
+			</tr>
+
+			<tr>
+				<td>タグ</td>
+				<td><%= post.tag_list %></td>
+			</tr>
+			<tr>
+				<td>画像</td>
+				<td>
+					<% post.post_images.each do |post_image| %>
+					<%= attachment_image_tag post_image ,:post_image, size:"100x100"%>
+					<% end %>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

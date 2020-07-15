@@ -1,0 +1,15 @@
+ja:
+  enums:
+    restaurant:
+      smoking:
+        non_smoking: 禁煙
+        smoking: 喫煙
+        separation_smoking: 分煙
+      standing:
+        standing: "あり"
+        non_standing: "なし"
+      closed:
+        closed: "閉店済"
+        open: "開業中"
+
+

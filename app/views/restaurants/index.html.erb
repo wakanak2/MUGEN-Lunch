@@ -1,1 +1,30 @@
-<h2>店舗一覧</h2>
+<h2>RESTAURANT INDEX</h2>
+
+<table>
+	<thead>
+		<th></th>
+	</thead>
+
+	<tbody>
+		<% @restaurant.each do |restaurant| %>
+		<tr>
+			<td>店名</td>
+			<td><%= restaurant.name %></td>
+		</tr>
+		<tr>
+			<td>住所</td>
+			<td><%= restaurant.address %></td>
+		</tr>
+		<tr>
+
+			<td>平均評価</td>
+			<td>
+				<script src="/assets/javascripts/jquery.raty.js"></script>
+				<div id="star-rate-<%= restaurant.id %>"><%= restaurant_ave_rate(restaurant) %></div>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= render "restaurants/search" %>

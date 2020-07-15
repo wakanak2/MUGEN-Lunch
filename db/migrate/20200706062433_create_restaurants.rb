@@ -3,14 +3,14 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
     create_table :restaurants do |t|
       t.string :name, null: false
       t.string :branch
-      t.string :namme_kana, null: false
+      t.string :name_kana, null: false
       t.string :postcode, null: false
       t.string :address, null: false
       t.integer :tel
-      t.integer :weekday_start
-      t.integer :weekday_finish
-      t.integer :weekend_start
-      t.integer :weekend_finish
+      t.time :weekday_start
+      t.time :weekday_finish
+      t.time :weekend_start
+      t.time :weekend_finish
       t.string :holiday
       t.integer :seat
       t.text :homepage

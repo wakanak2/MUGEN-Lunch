@@ -1,0 +1,11 @@
+<h2>COMMENT SHOW</h2>
+
+<div class="show-comment">
+	<div class="r-info-box">
+		<%= render "restaurants/info", restaurant: @post.restaurant %>
+	</div>
+	<div class="p-info-box">
+		<%= link_to "口コミを編集する", edit_post_path(@post) ,class: "p-edit-btn" %>
+		<%= render "posts/info", post: @post, user: @user %>
+	</div>
+</div>

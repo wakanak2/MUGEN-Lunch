@@ -1,0 +1,81 @@
+<div class="r-info_inner">
+
+	<table class="restaurant-info">
+		<thead>
+			<th class="th-w30"></th>
+			<th class="th-w70"></th>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td class="td1">店舗名</td>
+				<td><%= restaurant.name %></td>
+			</tr>
+
+			<tr>
+				<td>支店名</td>
+				<td><%= restaurant.branch %></td>
+			</tr>
+
+			<tr>
+				<td>店舗名（カナ）</td>
+				<td><%= restaurant.name_kana %></td>
+			</tr>
+
+			<tr>
+				<td rowspan="2">住所</td>
+				<td><%= restaurant.postcode %></td>
+			</tr>
+
+			<tr>
+				<td><%= restaurant.address %></td>
+			</tr>
+
+			<tr>
+				<td>電話番号</td>
+				<td><%= restaurant.tel %></td>
+			</tr>
+
+			<tr>
+				<td rowspan="2">ランチタイム</td>
+				<td>平日　<%= restaurant.weekday_start.strftime("%H:%M") %>〜<%= restaurant.weekday_finish.strftime("%H:%M")  %></td>
+			</tr>
+
+			<tr>
+				<td>土日　<%= restaurant.weekend_start.strftime("%H:%M") %>〜<%= restaurant.weekend_finish.strftime("%H:%M") %></td>
+			</tr>
+
+			<tr>
+				<td>定休日</td>
+				<td><%= restaurant.holiday %></td>
+			</tr>
+
+			<tr>
+				<td>座席数</td>
+				<td><%= restaurant.seat %>席</td>
+			</tr>
+
+			<tr>
+				<td>HPリンク</td>
+				<td><%= restaurant.homepage %></td>
+			</tr>
+
+			<tr>
+				<td>立食　有・無</td>
+				<td><%= restaurant.standing %></td>
+			</tr>
+
+			<tr>
+				<td>喫煙席</td>
+				<td><%= restaurant.smoking %></td>
+			</tr>
+
+
+			<tr>
+				<td>開店　有・無</td>
+				<td><%= restaurant.closed %></td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

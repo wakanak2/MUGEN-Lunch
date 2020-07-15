@@ -1,0 +1,16 @@
+
+<h2>NEW COMMENT</h2>
+
+<div class="new-comment">
+	<div class="r-info-box">
+		<%= render "restaurants/info", restaurant: @restaurant %>
+	</div>
+
+
+	<div class="p-form-box">
+		<%= link_to "削除する", restaurant_post_path(@post), method: :delete %>
+		<%= render "posts/form", post: @post,user: current_user ,url: restaurant_post(@post), submit: '再投稿する' %>
+	</div>
+
+
+</div>

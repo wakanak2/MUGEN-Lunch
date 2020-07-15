@@ -74,8 +74,25 @@ gem 'kaminari'
 
 gem 'pry-byebug'
 
+# タグ付で使用
 gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'bxslider-rails'
 
 gem "bullet"
+
+#地図表示で使用
+gem "geocoder"
+
+gem 'enum_help'
+
+gem 'rails-i18n'
+
+gem 'dotenv-rails'
+
+gem 'gon'
+
+gem 'ransack'
+
+
+
