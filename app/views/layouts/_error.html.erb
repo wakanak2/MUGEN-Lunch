@@ -1,6 +1,12 @@
-<% if resouce.errors.any? %>
-	<h2>エラーがあります。エラー内容をご確認ください。</h2>
-	<% resouce.errors.full_messages.each do |message| %>
-		<% message %>
+<div class="errors">
+	<% if resouce.errors.any? %>
+		<h3>エラーがあります。エラー内容をご確認ください。</h3>
+		<ul>
+			<% resouce.errors.full_messages.each do |message| %>
+			<li>
+				<%= message %>
+			</li>
+			<% end %>
+		</ul>
 	<% end %>
-<% end %>
+</div>

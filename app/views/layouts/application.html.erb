@@ -6,33 +6,46 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= Gon::Base.render_data %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
      <header>
-      <% if user_signed_in? %>
+
       <div class="header-content">
+
+          <%= link_to restaurants_path do %>
+            <%= image_tag 'wide-logo.jpg',class: "header-logo" %>
+          <% end %>
+        <% if user_signed_in? %>
         <ul>
           <p>ようこそ、<%= current_user.name_kanji %>さん</p>
           <li><%= link_to "マイページ", user_path(current_user) %></li>
           <li><%= link_to "お気に入り", favorites_path %></li>
           <li><%= link_to "投稿一覧", posts_path %></li>
+          <li><%= link_to "店舗一覧", restaurants_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
 
         <% else %>
         <ul>
+
           <li><%= link_to "ログイン", new_user_session_path %></li>
           <li><%= link_to "新規登録", new_user_registration_path %></li>
           <li><%= link_to "店舗一覧", restaurants_path %></li>
           <li><%= link_to "アバウト", about_path %></li>
         </ul>
+        <% end %>
       </div>
-      <% end %>
-
      </header>
 
     <%= yield %>
   </body>
+
+  <footer>
+    <div class="footer">
+      <h4>©CopyRight MUGEN LUNCH 2020 All Rights Reserved.</h4>
+    <div>
+  </footer>
 </html>

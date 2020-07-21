@@ -10,41 +10,783 @@
 * files in this directory. Styles in this file should be added after the last require_* statement.
 * It is generally better to create a new file per style scope.
 *
+
+*= require bxslider
 *= require_tree .
 *= require_self
 */
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
-h2 {
-	background-color: #ea5549;
-	color:#FFFFFD;
-	font-weight:bold;
+
+
+ /*noto display: block;sans-regular*/
+@font-face{
+	font-family:'notosans';
+	src:url('NotoSansJP-Regular.otf')format('truetype');
+	font-weight: normal;
+    font-style: normal;
 }
 
+ /*notosans-medium*/
+@font-face{
+	font-family:'notosans-medium';
+	src:url('NotoSansJP-Medium.otf')format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+ /*notosans-bold*/
+@font-face{
+	font-family:'notosans-bold';
+	src:url('NotoSansJP-Bold.otf')format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+ /*montserrat-regular*/
+@font-face{
+	font-family:'montserrat';
+	src:url('MontserratSubrayada-Regular.ttf')format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+ /*montserrat-bold*/
+@font-face{
+	font-family:'montserrat-bold';
+	src:url('MontserratSubrayada-Bold.ttf')format('truetype');
+	font-weight: normal;
+    font-style: bold;
+}
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+$main-color:#ea5549;
+
+
+ /*font-base*/
+body{
+	font-family:'notosans';
+	padding-bottom: 100px;
+}
+a {
+ text-decoration: none;
+}
+
+ /*ain-table*/
+table{
+	background: #fff;
+	width:100%;
+	table-layout: fixed;
+
+	th,td{
+		padding:8px;
+	}
+
+}
+
+/*th-width*/
+th.th-w20{
+	width:20%;
+}
+th.th-w30{
+	width:30%;
+}
+th.th-w40{
+	width:40%;
+}
+th.th-w70{
+	width:70%;
+}
+
+ /*form-base*/
+.input-default{
+	padding: 8px 3px;
+	width:100%;
+	border-radius: 4px;
+	border: 2px solid #e3e3e3;
+
+	&:focus{
+		border: 1px solid  $main-color ;
+		outline: none;
+		box-shadow: 0 0 5px 1px rgba(234, 85, 73, .5);
+	}
+}
+
+ /*btn-base*/
+.btn{
+		padding: 13px ;
+		text-align: center;
+		color: $main-color;
+		border: 2px solid $main-color;
+		border-radius: 3px;
+		transition: 0.4s;
+		background-color: #fff;
+		display: table-cell;
+	&:hover {
+		background:  $main-color;
+		color: #fff;
+	}
+}
+.btn-sub{
+		padding: 13px ;
+		text-align: center;
+		color: #ffd900;
+		border: 2px solid #ffd900;
+		border-radius: 3px;
+		transition: 0.4s;
+		background-color: #fff;
+		display: table-cell;
+
+
+	&:hover {
+		background:#ffd900;
+		color: #fff;
+	}
+}
+
+
+.btn-fav{
+	padding: 13px ;
+	text-align: center;
+	color: #FFC7AF;
+	border: 2px solid #FFC7AF;
+	border-radius: 3px;
+	transition: 0.4s;
+	background-color: #fff;
+	display: table-cell;
+
+	&:hover {
+		background: #FFC7AF;
+		color: #fff;
+	}
+}
+
+.btn-unfav{
+		background: #FFC7AF;
+		color: #fff;
+		padding: 13px ;
+		text-align: center;
+		border: 2px solid #FFC7AF;
+		border-radius: 3px;
+		transition: 0.4s;
+		display: table-cell;
+
+	&:hover {
+		color: #FFC7AF;
+		background-color: #fff;
+	}
+}
+
+.btn-delete{
+	padding: 13px ;
+	text-align: center;
+	color: #bbbbbb;
+	border: 2px solid #bbbbbb;
+	border-radius: 3px;
+	transition: 0.4s;
+	background-color: #fff;
+
+	&:hover {
+		background: #bbbbbb;
+		color: #fff;
+	}
+}
+
+
+ /*title*/
+
+h2 {
+	color:$main-color;
+	font-family: 'montserrat-bold';
+	font-size:40px;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding: 0 35%;
+
+	&:before,&:after,{
+		content: '';
+		position: absolute;
+		top: 50%;
+		display: inline-block;
+		width: 35%;
+		height: 3px;
+		border-top: 3px solid $main-color;
+	}
+	&:before {
+		left:0;
+	}
+	&:after {
+		right: 0;
+	}
+}
+
+h3{
+	width:100%;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 30px 5%;
+}
+
+ /*user-image*/
+.user-image{
+	margin: 30px;
+	border-radius: 50%;
+	background-position: center ;
+}
+
+ /*header*/
 header {
+	width: 100%;
+
 	.header-content {
-	  display: flex;
-	  justify-content: space-between;
-	  width: 100%;
-	  margin: 0 auto;
+		display:flex;
+		justify-content:space-between;
 
+	  	ul {
 
-  	ul {
-  	 	justify-content: flex-end;
-	  	li{
-	  	  list-style: none;
-		    a {
-		        display: block;
-		        padding: auto 15px;
-		        text-align: center;
-		    }
-	    }
-	    li:hover {
-	      background-color: #D3D3D3;
+			position: right;
+			list-style: none;
+			display:flex;
+			justify-content: flex-end;
+			align-items: center;
+			margin:0;
+
+			li{
+				padding: 35px 15px;
+			}
+
+			li:hover {
+				background-color: #e3e3e3;
+
 			}
 		}
 	}
 }
+
+/*footer*/ 
+.footer{
+	background: $main-color;
+	color:#fff;
+
+	h4{
+		text-align: center;
+	}
+}
+
+/*toppage*/ 
+.top-background {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(359deg, #ea5549, #ffffff);
+	background-size: 400% 400%;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+
+
+	-webkit-animation: AnimationName 13s ease infinite;
+	-moz-animation: AnimationName 13s ease infinite;
+	animation: AnimationName 13s ease infinite;
+
+	@-webkit-keyframes AnimationName {
+		0%{background-position:48% 0%}
+		50%{background-position:53% 100%}
+		100%{background-position:48% 0%}
+	 }
+
+	@-moz-keyframes AnimationName {
+		0%{background-position:48% 0%}
+		50%{background-position:53% 100%}
+		100%{background-position:48% 0%}
+	}
+
+	@keyframes AnimationName {
+		0%{background-position:48% 0%}
+		50%{background-position:53% 100%}
+		100%{background-position:48% 0%}
+	}
+
+
+	.top-ttl{
+		font-size:3em;
+		text-align: center;
+		margin:10% 0;
+		color: #fff;
+
+
+	}
+
+	.top-links{
+		background-color:rgba(255,255,255,0.3);
+		height: 400px;
+		width: 400px;
+		margin: 0 auto 70px auto;
+		border-radius: 8px;
+		border-color: rgba(255,255,255,0.3);
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+
+		.btn-top{
+			@extend .btn-sub;
+			width: 70%;
+			margin:15px auto;
+			border-radius: 8px;
+
+		}
+	}
+
+}
+
+
+
+ /*devise-base*/
+
+.devise-form{
+	font-family:'notosans';
+	padding:5% 30%;
+
+	.field{
+
+		input[type=email],[type=password],[type=text]{
+			@extend .input-default;
+			margin-bottom:10px;
+		}
+
+		input[type=check]{
+			border-radius: 4px;
+			border: 2px solid #e3e3e3;
+		}
+
+	}
+	.actions{
+		width:100%;
+
+		.btn-1{
+		@extend .btn;
+		width:50%;
+		margin: 20px 25%;
+		}
+	}
+}
+
+
+/*about-page*/ 
+.about-inner{
+	width:100%;
+
+	.about-intro{
+		display: flex;
+ 		justify-content: center;
+
+ 		.emphasis{
+ 			font-size: 40px;
+ 			font-weight: bold;
+ 		}
+
+
+	}
+}
+.feature{
+	width:100%;
+	display:flex;
+	flex-wrap: nowrap; 
+	flex-direction: row;
+	justify-content: flex-around;
+
+	.feature-box{
+		margin:0 5%;
+		width:20%;
+		.about-img{
+		 max-width: 100%;
+		 max-height: 100%;
+		 width: auto;
+		 height: auto;
+		}
+
+	}
+
+}
+
+/*usershow*/
+.user-show-outer{
+	.user-show{
+		margin:5% 20%;
+		display: flex;
+		border-radius: 8px;
+		border: 5px solid  $main-color;
+		padding:20px 5px;
+		box-shadow:5px 5px 10px #808080;
+
+		table.table2{
+			flex-grow: 3;
+		 }
+
+	}
+	.user-show-btns{
+		margin:5% 20%;
+		position: relative;
+		display: flex;
+			justify-content: space-around;
+
+		.btn2{
+			@extend .btn;
+			margin:0 30px;
+			flex-grow: 1;
+		}
+	}
+}
+
+/*user-edit*/
+.user-edit-outer{
+	.user-edit{
+		margin:5% 15%;
+		display: flex;
+		border-radius: 8px;
+		border: 5px solid  $main-color;
+		padding:20px 5px;
+		box-shadow:5px 5px 10px #808080;
+
+		td{
+			text-align: center;
+
+			.user-image{
+			border-radius: 50%;
+			background-position: center ;
+
+			}
+			input[type=email],[type=text]{
+				@extend .input-default;
+			}
+
+		}
+	}
+
+	.btn-user-edit{
+	@extend .btn;
+	width:50%;
+	margin: 20px 25%;
+	}
+}
+
+/*user-unsubscribe*/
+.unsubscribe-inner{
+
+	.unsubscribe-box{
+	margin: 15px 0;
+	justify-content: center;
+		p{
+			text-align: center;
+		}
+	}
+
+	.unsubscribe-btns{
+		display: flex;
+		margin: 15px;
+		justify-content: center;
+
+		.btn{
+			margin-right:30px;
+		}
+	}
+}
+
+/*restaurats*/
+
+/*restaurats_info*/
+.r-info_inner{
+	table.restaurant-info{
+		@extend table;
+		border-collapse: collapse;
+	}
+
+		th,td,tr{
+			border-bottom: solid 1px #e3e3e3;
+		}
+		th.th1{
+			width:30%;
+		 }
+		th.th2{
+			width:70%;
+		 }
+
+}
+/*restauran-new*/
+.r-new-outer{
+	.restaurant-formbox{
+			margin:5% 15%;
+			display: flex;
+			border-radius: 8px;
+			border: 5px solid  $main-color;
+			padding:20px 20px;
+			box-shadow:5px 5px 10px #808080;
+
+		table.restaurant-form{
+			background: #fff;
+			width:100%;
+			table-layout: fixed;
+
+			th.th3{
+				width:25%;
+			}
+			th.th4{
+				width:15%;
+			}
+
+			input[type=text],[type=time]{
+				@extend .input-default;
+
+			}
+
+		}
+	}
+	.btn-r-new{
+		@extend .btn;
+		width:50%;
+		margin: 20px 25%;
+	}
+}
+/*restaurant-show*/
+.r-info-high{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin-top:30px;
+
+	.r-edit-btn{
+		@extend .btn;
+		float: right;
+		margin-right:12.5%;
+	}
+
+	.map-box{
+		padding: 15px;
+		width:50%;
+		#map{
+		height: 100%;
+		width: 100%
+		}
+	}
+	.r-info-box{
+		width:50%;
+		padding: 15px;
+
+		.r-info-btns{
+			margin-top: 20px;
+			display: flex;
+			justify-content:space-around;
+
+			.btn-6{
+				@extend .btn-sub;
+				margin:0 12.5%;
+			}
+		}
+	}
+}
+.r-info-middle{
+	display: flex;
+	.r-averages{
+		width:50%;
+		padding-left:15px; 
+	}
+	.bxslider-box{
+		width: 50%;
+		padding: 8px;
+	}
+}
+.r-post-all{
+	h3{
+		color: #ea5549;
+    	width: 90%;
+    	font-size: 20px;
+    	font-weight: bold;
+	    padding-left: 30px;
+	    border-bottom: dashed 4px #ea5549;
+	    margin: auto;
+	}
+	.r-user-posts{
+			width:90%;
+			margin: auto;
+
+			th,tr,td{
+				border-bottom: solid 1px #e3e3e3;
+
+			}
+	}
+}
+/*restaruant-edit*/
+
+.return-r-info{
+	width: 100%;
+	 display: flex;
+
+	.btn-return-r-info{
+			@extend .btn-sub;
+			width:25%;
+			margin: 1% 15% 0 60%;
+		&:hover {
+			background:  #ffd900;
+			color: #fff;
+		}
+	}
+}
+/*restaurant-index*/
+.r-index-inner{
+	display: flex;
+
+	.r-search-form{
+		width:20%;
+		padding:30px;
+			input{
+				@extend .input-default;
+				margin-bottom:10px;
+			}
+			.new-r{
+				margin: 20px 0;
+				.btn-new-r{
+					@extend .btn-sub;
+					display: block;
+				}
+			}
+
+	}
+	.r-index{
+		width:80%;
+		padding:30px;
+
+		th,tr,td{
+			border-bottom: solid 1px #e3e3e3;
+
+		}
+		.r-show-link{
+			padding: 5px;
+			.r-show-link-btn{
+				padding: 5px ;
+				text-align: center;
+				color: $main-color;
+				border: 2px solid $main-color;
+				border-radius: 3px;
+				transition: 0.4s;
+				background-color: #fff;
+				&:hover {
+					background:  $main-color;
+					color: #fff;
+				}
+			}
+		}
+
+	}
+}
+
+.p-btn{
+@extend .btn;
+width:50%;
+margin: 20px 25%;
+}
+
+/*post-new*/
+.new-comment{
+	@extend .r-info-high;
+	.p-form-box{
+		width:50%;
+		padding:10px;
+
+		@extend table;
+
+		input[type=text] {
+			@extend .input-default;
+			}
+
+		.p-btn{
+			@extend .btn;
+			width:25%;
+			margin:10px 37.5%;
+		}
+		.p-delete-btn{
+			@extend .btn-delete;
+			float: right;
+		}
+	}
+
+
+	.r-info-box{
+		width:50%;
+	}
+}
+
+/*post-show*/
+.show-post{
+	@extend .r-info-high;
+
+	.p-info-box{
+		width:50%;
+		padding:15px;
+		.p-show-btns{
+			margin-top: 20px;
+			display: flex;
+			justify-content:space-around;
+			.p-edit-btn{
+			@extend .btn;
+			}
+			.r-show-btn{
+			@extend .btn-sub;
+			}
+		}
+	}
+
+	.r-info-box{
+		width:50%;
+		padding:15px;
+
+	}
+}
+
+/*post-index*/
+.p-index{
+	.post-form{
+		margin:5% 10%;
+		width: 80%;
+
+		.p-index-td{
+		border-bottom: solid 1px #e3e3e3;
+		}
+	}
+}
+
+/*favorite*/
+.fav-index{
+	.fav-sort{
+		margin:0 10%;
+		width: 80%;
+		select{
+			height: 40px;
+		}
+		input{
+			height: 40px;
+			width: 70px;
+		}
+	}
+	.fav-inner{
+		margin:5% 10%;
+		width: 80%;
+
+		.fav-index-td{
+		border-bottom: solid 1px #e3e3e3;
+			.fav-btns{
+				display: flex;
+
+			}
+		}
+	}
+}
+
+
 
 

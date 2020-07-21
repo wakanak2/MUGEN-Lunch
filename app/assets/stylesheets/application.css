@@ -1,0 +1,533 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+
+*= require bxslider
+*= require_tree .
+*= require_self
+*/
+/*noto display: block;sans-regular*/
+@font-face {
+  font-family: 'notosans';
+  src: url("NotoSansJP-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*notosans-medium*/
+@font-face {
+  font-family: 'notosans-medium';
+  src: url("NotoSansJP-Medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*notosans-bold*/
+@font-face {
+  font-family: 'notosans-bold';
+  src: url("NotoSansJP-Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*montserrat-regular*/
+@font-face {
+  font-family: 'montserrat';
+  src: url("MontserratSubrayada-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*montserrat-bold*/
+@font-face {
+  font-family: 'montserrat-bold';
+  src: url("MontserratSubrayada-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: bold; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*font-base*/
+body {
+  font-family: 'notosans';
+  padding-bottom: 100px; }
+
+a {
+  text-decoration: none; }
+
+/*ain-table*/
+table, .r-info_inner table.restaurant-info, .new-comment .p-form-box {
+  background: #fff;
+  width: 100%;
+  table-layout: fixed; }
+  table th, .r-info_inner table.restaurant-info th, .new-comment .p-form-box th, table td, .r-info_inner table.restaurant-info td, .new-comment .p-form-box td {
+    padding: 8px; }
+
+/*th-width*/
+th.th-w20 {
+  width: 20%; }
+
+th.th-w30 {
+  width: 30%; }
+
+th.th-w40 {
+  width: 40%; }
+
+th.th-w70 {
+  width: 70%; }
+
+/*form-base*/
+.input-default, .devise-form .field input[type=email], .devise-form .field [type=password], .devise-form .field [type=text], .user-edit-outer .user-edit td input[type=email], .user-edit-outer .user-edit td [type=text], .r-new-outer .restaurant-formbox table.restaurant-form input[type=text], .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box input[type=text], .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box input[type=text], .r-new-outer .restaurant-formbox table.restaurant-form [type=time], .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box [type=time], .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box [type=time], .r-index-inner .r-search-form input, .new-comment .p-form-box input[type=text] {
+  padding: 8px 3px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #e3e3e3; }
+  .input-default:focus, .devise-form .field input[type=email]:focus, .devise-form .field [type=password]:focus, .devise-form .field [type=text]:focus, .user-edit-outer .user-edit td input[type=email]:focus, .user-edit-outer .user-edit td [type=text]:focus, .r-new-outer .restaurant-formbox table.restaurant-form input[type=text]:focus, .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box input[type=text]:focus, .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box input[type=text]:focus, .r-new-outer .restaurant-formbox table.restaurant-form [type=time]:focus, .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box [type=time]:focus, .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box [type=time]:focus, .r-index-inner .r-search-form input:focus, .new-comment .p-form-box input[type=text]:focus {
+    border: 1px solid #ea5549;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(234, 85, 73, 0.5); }
+
+/*btn-base*/
+.btn, .devise-form .actions .btn-1, .user-show-outer .user-show-btns .btn2, .user-edit-outer .btn-user-edit, .r-new-outer .btn-r-new, .r-info-high .r-edit-btn, .new-comment .r-edit-btn, .show-post .r-edit-btn, .p-btn, .new-comment .p-form-box .p-btn, .show-post .p-info-box .p-show-btns .p-edit-btn {
+  padding: 13px;
+  text-align: center;
+  color: #ea5549;
+  border: 2px solid #ea5549;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff;
+  display: table-cell; }
+  .btn:hover, .devise-form .actions .btn-1:hover, .user-show-outer .user-show-btns .btn2:hover, .user-edit-outer .btn-user-edit:hover, .r-new-outer .btn-r-new:hover, .r-info-high .r-edit-btn:hover, .new-comment .r-edit-btn:hover, .show-post .r-edit-btn:hover, .p-btn:hover, .new-comment .p-form-box .p-btn:hover, .show-post .p-info-box .p-show-btns .p-edit-btn:hover {
+    background: #ea5549;
+    color: #fff; }
+
+.btn-sub, .top-background .top-links .btn-top, .r-info-high .r-info-box .r-info-btns .btn-6, .new-comment .r-info-box .r-info-btns .btn-6, .show-post .r-info-box .r-info-btns .btn-6, .return-r-info .btn-return-r-info, .r-index-inner .r-search-form .new-r .btn-new-r, .show-post .p-info-box .p-show-btns .r-show-btn {
+  padding: 13px;
+  text-align: center;
+  color: #ffd900;
+  border: 2px solid #ffd900;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff;
+  display: table-cell; }
+  .btn-sub:hover, .top-background .top-links .btn-top:hover, .r-info-high .r-info-box .r-info-btns .btn-6:hover, .new-comment .r-info-box .r-info-btns .btn-6:hover, .show-post .r-info-box .r-info-btns .btn-6:hover, .return-r-info .btn-return-r-info:hover, .r-index-inner .r-search-form .new-r .btn-new-r:hover, .show-post .p-info-box .p-show-btns .r-show-btn:hover {
+    background: #ffd900;
+    color: #fff; }
+
+.btn-fav {
+  padding: 13px;
+  text-align: center;
+  color: #FFC7AF;
+  border: 2px solid #FFC7AF;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff;
+  display: table-cell; }
+  .btn-fav:hover {
+    background: #FFC7AF;
+    color: #fff; }
+
+.btn-unfav {
+  background: #FFC7AF;
+  color: #fff;
+  padding: 13px;
+  text-align: center;
+  border: 2px solid #FFC7AF;
+  border-radius: 3px;
+  transition: 0.4s;
+  display: table-cell; }
+  .btn-unfav:hover {
+    color: #FFC7AF;
+    background-color: #fff; }
+
+.btn-delete, .new-comment .p-form-box .p-delete-btn {
+  padding: 13px;
+  text-align: center;
+  color: #bbbbbb;
+  border: 2px solid #bbbbbb;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff; }
+  .btn-delete:hover, .new-comment .p-form-box .p-delete-btn:hover {
+    background: #bbbbbb;
+    color: #fff; }
+
+/*title*/
+h2 {
+  color: #ea5549;
+  font-family: 'montserrat-bold';
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0 35%; }
+  h2:before, h2:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 35%;
+    height: 3px;
+    border-top: 3px solid #ea5549; }
+  h2:before {
+    left: 0; }
+  h2:after {
+    right: 0; }
+
+h3 {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 5%; }
+
+/*user-image*/
+.user-image {
+  margin: 30px;
+  border-radius: 50%;
+  background-position: center; }
+
+/*header*/
+header {
+  width: 100%; }
+  header .header-content {
+    display: flex;
+    justify-content: space-between; }
+    header .header-content ul {
+      position: right;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0; }
+      header .header-content ul li {
+        padding: 35px 15px; }
+      header .header-content ul li:hover {
+        background-color: #e3e3e3; }
+
+/*footer*/
+.footer {
+  background: #ea5549;
+  color: #fff; }
+  .footer h4 {
+    text-align: center; }
+
+/*toppage*/
+.top-background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(359deg, #ea5549, #ffffff);
+  background-size: 400% 400%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-animation: AnimationName 13s ease infinite;
+  -moz-animation: AnimationName 13s ease infinite;
+  animation: AnimationName 13s ease infinite; }
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 48% 0%; }
+  50% {
+    background-position: 53% 100%; }
+  100% {
+    background-position: 48% 0%; } }
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 48% 0%; }
+  50% {
+    background-position: 53% 100%; }
+  100% {
+    background-position: 48% 0%; } }
+@keyframes AnimationName {
+  0% {
+    background-position: 48% 0%; }
+  50% {
+    background-position: 53% 100%; }
+  100% {
+    background-position: 48% 0%; } }
+  .top-background .top-ttl {
+    font-size: 3em;
+    text-align: center;
+    margin: 10% 0;
+    color: #fff; }
+  .top-background .top-links {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 400px;
+    width: 400px;
+    margin: 0 auto 70px auto;
+    border-radius: 8px;
+    border-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .top-background .top-links .btn-top {
+      width: 70%;
+      margin: 15px auto;
+      border-radius: 8px; }
+
+/*devise-base*/
+.devise-form {
+  font-family: 'notosans';
+  padding: 5% 30%; }
+  .devise-form .field input[type=email], .devise-form .field [type=password], .devise-form .field [type=text] {
+    margin-bottom: 10px; }
+  .devise-form .field input[type=check] {
+    border-radius: 4px;
+    border: 2px solid #e3e3e3; }
+  .devise-form .actions {
+    width: 100%; }
+    .devise-form .actions .btn-1 {
+      width: 50%;
+      margin: 20px 25%; }
+
+/*about-page*/
+.about-inner {
+  width: 100%; }
+  .about-inner .about-intro {
+    display: flex;
+    justify-content: center; }
+    .about-inner .about-intro .emphasis {
+      font-size: 40px;
+      font-weight: bold; }
+
+.feature {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-around; }
+  .feature .feature-box {
+    margin: 0 5%;
+    width: 20%; }
+    .feature .feature-box .about-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto; }
+
+/*usershow*/
+.user-show-outer .user-show {
+  margin: 5% 20%;
+  display: flex;
+  border-radius: 8px;
+  border: 5px solid #ea5549;
+  padding: 20px 5px;
+  box-shadow: 5px 5px 10px #808080; }
+  .user-show-outer .user-show table.table2, .user-show-outer .user-show .new-comment .table2.p-form-box, .new-comment .user-show-outer .user-show .table2.p-form-box {
+    flex-grow: 3; }
+.user-show-outer .user-show-btns {
+  margin: 5% 20%;
+  position: relative;
+  display: flex;
+  justify-content: space-around; }
+  .user-show-outer .user-show-btns .btn2 {
+    margin: 0 30px;
+    flex-grow: 1; }
+
+/*user-edit*/
+.user-edit-outer .user-edit {
+  margin: 5% 15%;
+  display: flex;
+  border-radius: 8px;
+  border: 5px solid #ea5549;
+  padding: 20px 5px;
+  box-shadow: 5px 5px 10px #808080; }
+  .user-edit-outer .user-edit td {
+    text-align: center; }
+    .user-edit-outer .user-edit td .user-image {
+      border-radius: 50%;
+      background-position: center; }
+.user-edit-outer .btn-user-edit {
+  width: 50%;
+  margin: 20px 25%; }
+
+/*user-unsubscribe*/
+.unsubscribe-inner .unsubscribe-box {
+  margin: 15px 0;
+  justify-content: center; }
+  .unsubscribe-inner .unsubscribe-box p {
+    text-align: center; }
+.unsubscribe-inner .unsubscribe-btns {
+  display: flex;
+  margin: 15px;
+  justify-content: center; }
+  .unsubscribe-inner .unsubscribe-btns .btn, .unsubscribe-inner .unsubscribe-btns .devise-form .actions .btn-1, .devise-form .actions .unsubscribe-inner .unsubscribe-btns .btn-1, .unsubscribe-inner .unsubscribe-btns .user-show-outer .user-show-btns .btn2, .user-show-outer .user-show-btns .unsubscribe-inner .unsubscribe-btns .btn2, .unsubscribe-inner .unsubscribe-btns .user-edit-outer .btn-user-edit, .user-edit-outer .unsubscribe-inner .unsubscribe-btns .btn-user-edit, .unsubscribe-inner .unsubscribe-btns .r-new-outer .btn-r-new, .r-new-outer .unsubscribe-inner .unsubscribe-btns .btn-r-new, .unsubscribe-inner .unsubscribe-btns .r-info-high .r-edit-btn, .r-info-high .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .new-comment .r-edit-btn, .new-comment .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .show-post .r-edit-btn, .show-post .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .p-btn, .unsubscribe-inner .unsubscribe-btns .show-post .p-info-box .p-show-btns .p-edit-btn, .show-post .p-info-box .p-show-btns .unsubscribe-inner .unsubscribe-btns .p-edit-btn {
+    margin-right: 30px; }
+
+/*restaurats*/
+/*restaurats_info*/
+.r-info_inner table.restaurant-info, .r-info_inner .new-comment .restaurant-info.p-form-box, .new-comment .r-info_inner .restaurant-info.p-form-box {
+  border-collapse: collapse; }
+.r-info_inner th, .r-info_inner td, .r-info_inner tr {
+  border-bottom: solid 1px #e3e3e3; }
+.r-info_inner th.th1 {
+  width: 30%; }
+.r-info_inner th.th2 {
+  width: 70%; }
+
+/*restauran-new*/
+.r-new-outer .restaurant-formbox {
+  margin: 5% 15%;
+  display: flex;
+  border-radius: 8px;
+  border: 5px solid #ea5549;
+  padding: 20px 20px;
+  box-shadow: 5px 5px 10px #808080; }
+  .r-new-outer .restaurant-formbox table.restaurant-form, .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box, .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box {
+    background: #fff;
+    width: 100%;
+    table-layout: fixed; }
+    .r-new-outer .restaurant-formbox table.restaurant-form th.th3, .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box th.th3, .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box th.th3 {
+      width: 25%; }
+    .r-new-outer .restaurant-formbox table.restaurant-form th.th4, .r-new-outer .restaurant-formbox .new-comment .restaurant-form.p-form-box th.th4, .new-comment .r-new-outer .restaurant-formbox .restaurant-form.p-form-box th.th4 {
+      width: 15%; }
+.r-new-outer .btn-r-new {
+  width: 50%;
+  margin: 20px 25%; }
+
+/*restaurant-show*/
+.r-info-high, .new-comment, .show-post {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px; }
+  .r-info-high .r-edit-btn, .new-comment .r-edit-btn, .show-post .r-edit-btn {
+    float: right;
+    margin-right: 12.5%; }
+  .r-info-high .map-box, .new-comment .map-box, .show-post .map-box {
+    padding: 15px;
+    width: 50%; }
+    .r-info-high .map-box #map, .new-comment .map-box #map, .show-post .map-box #map {
+      height: 100%;
+      width: 100%; }
+  .r-info-high .r-info-box, .new-comment .r-info-box, .show-post .r-info-box {
+    width: 50%;
+    padding: 15px; }
+    .r-info-high .r-info-box .r-info-btns, .new-comment .r-info-box .r-info-btns, .show-post .r-info-box .r-info-btns {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around; }
+      .r-info-high .r-info-box .r-info-btns .btn-6, .new-comment .r-info-box .r-info-btns .btn-6, .show-post .r-info-box .r-info-btns .btn-6 {
+        margin: 0 12.5%; }
+
+.r-info-middle {
+  display: flex; }
+  .r-info-middle .r-averages {
+    width: 50%;
+    padding-left: 15px; }
+  .r-info-middle .bxslider-box {
+    width: 50%;
+    padding: 8px; }
+
+.r-post-all h3 {
+  color: #ea5549;
+  width: 90%;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 30px;
+  border-bottom: dashed 4px #ea5549;
+  margin: auto; }
+.r-post-all .r-user-posts {
+  width: 90%;
+  margin: auto; }
+  .r-post-all .r-user-posts th, .r-post-all .r-user-posts tr, .r-post-all .r-user-posts td {
+    border-bottom: solid 1px #e3e3e3; }
+
+/*restaruant-edit*/
+.return-r-info {
+  width: 100%;
+  display: flex; }
+  .return-r-info .btn-return-r-info {
+    width: 25%;
+    margin: 1% 15% 0 60%; }
+    .return-r-info .btn-return-r-info:hover {
+      background: #ffd900;
+      color: #fff; }
+
+/*restaurant-index*/
+.r-index-inner {
+  display: flex; }
+  .r-index-inner .r-search-form {
+    width: 20%;
+    padding: 30px; }
+    .r-index-inner .r-search-form input {
+      margin-bottom: 10px; }
+    .r-index-inner .r-search-form .new-r {
+      margin: 20px 0; }
+      .r-index-inner .r-search-form .new-r .btn-new-r {
+        display: block; }
+  .r-index-inner .r-index {
+    width: 80%;
+    padding: 30px; }
+    .r-index-inner .r-index th, .r-index-inner .r-index tr, .r-index-inner .r-index td {
+      border-bottom: solid 1px #e3e3e3; }
+    .r-index-inner .r-index .r-show-link {
+      padding: 5px; }
+      .r-index-inner .r-index .r-show-link .r-show-link-btn {
+        padding: 5px;
+        text-align: center;
+        color: #ea5549;
+        border: 2px solid #ea5549;
+        border-radius: 3px;
+        transition: 0.4s;
+        background-color: #fff; }
+        .r-index-inner .r-index .r-show-link .r-show-link-btn:hover {
+          background: #ea5549;
+          color: #fff; }
+
+.p-btn {
+  width: 50%;
+  margin: 20px 25%; }
+
+/*post-new*/
+.new-comment .p-form-box {
+  width: 50%;
+  padding: 10px; }
+  .new-comment .p-form-box .p-btn {
+    width: 25%;
+    margin: 10px 37.5%; }
+  .new-comment .p-form-box .p-delete-btn {
+    float: right; }
+.new-comment .r-info-box {
+  width: 50%; }
+
+/*post-show*/
+.show-post .p-info-box {
+  width: 50%;
+  padding: 15px; }
+  .show-post .p-info-box .p-show-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around; }
+.show-post .r-info-box {
+  width: 50%;
+  padding: 15px; }
+
+/*post-index*/
+.p-index .post-form {
+  margin: 5% 10%;
+  width: 80%; }
+  .p-index .post-form .p-index-td {
+    border-bottom: solid 1px #e3e3e3; }
+
+/*favorite*/
+.fav-index .fav-sort {
+  margin: 0 10%;
+  width: 80%; }
+  .fav-index .fav-sort select {
+    height: 40px; }
+  .fav-index .fav-sort input {
+    height: 40px;
+    width: 70px; }
+.fav-index .fav-inner {
+  margin: 5% 10%;
+  width: 80%; }
+  .fav-index .fav-inner .fav-index-td {
+    border-bottom: solid 1px #e3e3e3; }
+    .fav-index .fav-inner .fav-index-td .fav-btns {
+      display: flex; }
+
+/*# sourceMappingURL=application.css.map */

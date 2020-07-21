@@ -1,0 +1,63 @@
+<div class="fav-index">
+	<h2>FAVORITES</h2>
+	<div class="fav-sort">
+		<%= form_with url: favorites_path, method: :get, local: true do |f| %>
+
+		<%= f.select :keyword,[['登録日が新しい順','new'],['登録日が古い順','old']]%>
+		<%= f.submit %>
+		<% end %>
+	</div>
+
+	<div class="fav-inner">
+		<table class="fav-table">
+			<thead>
+				<th class="th-w20"></th>
+				<th class="th-w50"></th>
+				<th class="th-w30"></th>
+
+			</thead>
+
+			<tbody>
+				<% @favorites.each do |favorite| %>
+					<tr>
+						<td>店名</td>
+						<td><%= favorite.restaurant.name %></td>
+						<td rowspan="3" class="fav-index-td">
+							<div class="fav-btns">
+								<%= link_to "詳細", restaurant_path(favorite.restaurant.id), class: "btn-sub" %>
+								<div id="favorite_<%= favorite.restaurant.id %>">
+								<%= render 'favorites/fav_btn',restaurant: favorite.restaurant,favorite: favorite %>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>住所</td>
+						<td><%= favorite.restaurant.address %></td>
+					</tr>
+					<tr>
+						<!-- 星評価 -->
+						<td class="fav-index-td">平均評価</td>
+						<td class="fav-index-td"><div id="star-rate-<%= favorite.restaurant.id %>">
+							<%= restaurant_ave_rate(favorite.restaurant) %>
+						</div>
+						<script>
+							$('#star-rate-<%= favorite.restaurant.id %>').raty({
+							size: 36,
+							starOff:  '<%= asset_path('star-off.png') %>',
+							starOn : '<%= asset_path('star-on.png') %>',
+							starHalf: '<%= asset_path('star-half.png') %>',
+							half: true,
+							readOnly: true,
+							score: <%= restaurant_ave_rate(favorite.restaurant) %>,
+							});
+						</script>
+						</td>
+						<!-- 星評価終了 -->
+					</tr>
+
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

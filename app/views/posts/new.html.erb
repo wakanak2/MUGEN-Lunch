@@ -1,0 +1,13 @@
+
+<h2>NEW COMMENT</h2>
+
+<div class="new-comment">
+	<div class="r-info-box">
+		<%= render "restaurants/info", restaurant: @post.restaurant %>
+	</div>
+
+	<div class="p-form-box">
+		<%= render "layouts/error", resouce: @post %>
+		<%= render "posts/form", post: @post,user: current_user ,url: restaurant_posts_path, submit: '投稿' %>
+	</div>
+</div>

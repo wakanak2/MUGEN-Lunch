@@ -1,0 +1,19 @@
+<h2>POST SHOW</h2>
+
+<div class="show-post">
+	<div class="r-info-box">
+		<%= render "restaurants/info", restaurant: @post.restaurant %>
+		<%= render "restaurants/average", restaurant: @post.restaurant %>
+	</div>
+	<div class="p-info-box">
+		<%= render "posts/info", post: @post, user: @user %>
+		<div class="p-show-btns">
+			<%= link_to  "店舗ページ", restaurant_path(@post.restaurant),class: "r-show-btn" %>
+
+			<% if @post.user.id == current_user.id %>
+				<%= link_to "口コミを編集する", edit_restaurant_post_path(@post.restaurant,@post) ,class: "p-edit-btn" %>
+			<% end %>
+		</div>
+
+	</div>
+</div>

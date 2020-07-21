@@ -1,116 +1,130 @@
-<%= form_with model:restaurant, local: true, url:url do |f| %>
- 
- 	<table>
-		<thead>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-		</thead>
+<div class="r-new-outer">
+	<%= form_with model:restaurant, local: true, url: url do |f| %>
+		<div class="restaurant-formbox">
 
-		<tbody>
-			<tr>
-				<td><%= f.label :name, "名前" %></td>
-				<td colspan="10"><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"もぐもぐ食堂" %></td>
-			</tr>
+			 	<table class="restaurant-form">
+					<thead>
+						<th class="th3"></th>
+						<th class="th4"></th>
+						<th class="th4"></th>
+						<th class="th4"></th>
+						<th class="th4"></th>
+						<th class="th4"></th>
+						<th class="th4"></th>
+					</thead>
 
-			<tr>
-				<td><%= f.label :branch, "支店名" %></td>
-				<td colspan="10"><%= f.text_field :branch, autofocus: true, autocomplete: "branch", placeholder:"渋谷支店" %></td>
-			</tr>
+					<tbody>
+						<tr>
+							<td><%= f.label :name, "名前" %></td>
+							<td colspan="6"><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"もぐもぐ食堂" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :name_kana, "名前（カナ）" %></td>
-				<td colspan="10"><%= f.text_field :name_kana, autofocus: true, autocomplete: "name_kana", placeholder:"モグモグショクドウ" %></td>
-			</tr>
+						<tr>
+							<td><%= f.label :branch, "支店名" %></td>
+							<td colspan="6"><%= f.text_field :branch, autofocus: true, autocomplete: "branch", placeholder:"渋谷支店" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :postcode, "郵便番号" %></td>
-				<td colspan="10"><%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", placeholder:"1234567" %></td>
-			</tr>
+						<tr>
+							<td><%= f.label :name_kana, "名前（カナ）" %></td>
+							<td colspan="6"><%= f.text_field :name_kana, autofocus: true, autocomplete: "name_kana", placeholder:"モグモグショクドウ" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :address, "住所" %></td>
-				<td colspan="10"><%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder:"住所" %></td>
-			</tr>
+						<tr>
+							<td><%= f.label :postcode, "郵便番号" %></td>
+							<td colspan="6"><%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", placeholder:"1234567" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :tel, "電話番号" %></td>
-				<td colspan="10"><%= f.text_field :tel, autofocus: true, autocomplete: "tel", placeholder:"00011112222" %></td>
-			</tr>
+						<tr>
+							<td><%= f.label :address, "住所" %></td>
+							<td colspan="6"><%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder:"住所" %></td>
+						</tr>
 
-			<tr>
-				<td>ランチタイム</td>
-				<td>平日</td>
-				<td><%= f.label :weekday_start, "開始" %></td>
-				<td><%= f.time_field :weekday_start, autofocus: true, autocomplete: "weekday_start", placeholder:"11:30" %></td>
-				<td><%= f.label :weekday_finish, "終了" %></td>
-				<td><%= f.time_field :weekday_finish, autofocus: true, autocomplete: "weekday_finish", placeholder:"14:30" %></td>
-				<td>土日</td>
-				<td><%= f.label :weekend_start, "開始" %></td>
-				<td><%= f.time_field :weekend_start, autofocus: true, autocomplete: "weekend_start", placeholder:"11:30" %></td>
-				<td><%= f.label :weekend_finish, "終了" %></td>
-				<td><%= f.time_field :weekend_finish, autofocus: true, autocomplete: "weekend_finish", placeholder:"14:30" %></td>
-			</tr>
+						<tr>
+							<td><%= f.label :tel, "電話番号" %></td>
+							<td colspan="6"><%= f.text_field :tel, autofocus: true, autocomplete: "tel", placeholder:"00011112222" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :holiday, "定休日" %></td>
-				<td colspan="10"><%= f.text_field :holiday, autofocus: true, autocomplete: "holiday", placeholder:"月" %></td>
-			</tr>
+						<tr>
+							<td>ランチタイム</td>
+							<td>平日</td>
+							<td><%= f.label :weekday_start, "開始" %></td>
+							<td><%= f.time_field :weekday_start, autofocus: true, autocomplete: "weekday_start" %></td>
+							<td><%= f.label :weekday_finish, "終了" %></td>
+							<td><%= f.time_field :weekday_finish, autofocus: true, autocomplete: "weekday_finish" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :seat, "座席数" %></td>
-				<td colspan="10"><%= f.text_field :seat, autofocus: true, autocomplete: "seat", placeholder:"15" %>席</td>
-			</tr>
+						<tr>
+							<td></td>
+							<td>土日</td>
+							<td><%= f.label :weekend_start, "開始" %></td>
+							<td><%= f.time_field :weekend_start, autofocus: true, autocomplete: "weekend_start" %></td>
+							<td><%= f.label :weekend_finish, "終了" %></td>
+							<td><%= f.time_field :weekend_finish, autofocus: true, autocomplete: "weekend_finish" %></td>
+						</tr>
 
-			<tr>
-				<td><%= f.label :homepage, "HP" %></td>
-				<td colspan="10"><%= f.text_field :homepage, autofocus: true, autocomplete: "homepage", placeholder:"http://xxxxxxxxxxxxxxxxxxx" %></td>
-			</tr>
 
-			<tr>
-				<td>立食　有・無</td>
-				<td colspan="10">
-					<%= f.radio_button :standing, :あり %>
-					<%= f.label :あり %>
-					<%= f.radio_button :standing, :なし , checked: "checked" %>
-					<%= f.label :なし %>
-				</td>
-			</tr>
+						<tr>
+							<td><%= f.label :holiday, "定休日" %></td>
+							<td colspan="6"><%= f.text_field :holiday, autofocus: true, autocomplete: "holiday", placeholder:"月" %></td>
+						</tr>
 
-			<tr>
-				<td>喫煙　有・無</td>
-				<td colspan="10">
-					<%= f.radio_button :smoking, :禁煙, checked: "checked" %>
-					<%= f.label :禁煙 %>
-					<%= f.radio_button :smoking, :喫煙 %>
-					<%= f.label :喫煙 %>
-					<%= f.radio_button :smoking, :分煙 %>
-					<%= f.label :分煙 %>
-				</td>
-			</tr>
+						<tr>
+							<td><%= f.label :seat, "座席数" %></td>
+							<td colspan="6"><%= f.text_field :seat, autofocus: true, autocomplete: "seat", placeholder:"15" %></td>
+						</tr>
 
-			<tr>
-				<td>閉店情報</td>
-				<td colspan="10">
-					<%= f.radio_button :closed, :閉店済 %>
-					<%= f.label :閉店済 %>
-					<%= f.radio_button :closed, :開業中, checked: "checked" %>
-					<%= f.label :開業中 %>
-				</td>
-			</tr>
+						<tr>
+							<td><%= f.label :homepage, "HP" %></td>
+							<td colspan="6"><%= f.text_field :homepage, autofocus: true, autocomplete: "homepage", placeholder:"http://xxxxxxxxxxxxxxxxxxx" %></td>
+						</tr>
 
-			<tr>
-				<td colspan="11"><%= f.submit %></td>
-			</tr>
+						<tr>
+							<td>立食　有・無</td>
+							<td colspan="6">
+								<%= f.radio_button :standing, :あり %>
+								<%= f.label :あり %>
+								<%= f.radio_button :standing, :なし , checked: "checked" %>
+								<%= f.label :なし %>
+							</td>
+						</tr>
 
-		</tbody>
-	</table>
-<% end %>
+						<tr>
+							<td>喫煙　有・無</td>
+							<td colspan="6">
+								<%= f.radio_button :smoking, :禁煙, checked: "checked" %>
+								<%= f.label :禁煙 %>
+								<%= f.radio_button :smoking, :喫煙 %>
+								<%= f.label :喫煙 %>
+								<%= f.radio_button :smoking, :分煙 %>
+								<%= f.label :分煙 %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>閉店情報</td>
+							<td colspan="6">
+								<%= f.radio_button :closed, :閉店済 %>
+								<%= f.label :閉店済 %>
+								<%= f.radio_button :closed, :開業中, checked: "checked" %>
+								<%= f.label :開業中 %>
+							</td>
+						</tr>
+						<tr>
+							<td><%= f.label :genre, "ジャンル" %></td>
+							<td colspan="6">
+								<%= f.collection_check_boxes(:genre_ids, Genre.all.order(:name_kana),:id,:name) do |genre| %>
+									<%= genre.label do %>
+										<%= genre.check_box %>
+										<%= genre.text %>
+									<% end %>
+								<% end %>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+		</div>
+
+		<%= f.submit submit,class: "btn-r-new" %>
+	<% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="r-ave_inner">
+
+	<table class="restaurant-ave">
+		<thead>
+			<th class="th-w30"></th>
+			<th class="th-w70"></th>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>平均評価</td>
+				<td><script src="/assets/javascripts/jquery.raty.js"></script>
+					<div id="star-rate-<%= restaurant.id %>"><%= restaurant.posts.average(:rate).to_f.round(1) %></div></td>
+			</tr>
+
+			<tr>
+				<td>平均単価</td>
+				<td><%= restaurant.posts.average(:price).to_f.round(-1) %>円</td>
+			</tr>
+
+			<tr>
+				<td>平均提供スピード</td>
+				<td><%= restaurant.posts.average(:time).to_f.round(0) %>分</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

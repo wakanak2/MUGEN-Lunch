@@ -1,2 +1,100 @@
-<h2>店舗詳細</h2>
-<% render "restaurants/restaurant_info", restaurant: @restaurant %>
+<h2>RESTAURANT INFO</h2>
+
+<div class="r-info-high">
+
+	<div class="r-info-box">
+		<% if user_signed_in? %>
+			<%= link_to "店舗情報編集", edit_restaurant_path(@restaurant),class: "r-edit-btn" %>
+		<% end %>
+		<%= render "restaurants/info", restaurant: @restaurant %>
+
+		<div class="r-info-btns">
+			<% if user_signed_in? %>
+
+				<div id="favorite_<%= @restaurant.id %>">
+					<%= render 'favorites/fav_btn',restaurant: @restaurant,favorite: @favorite %>
+				</div>
+
+
+				<% if @restaurant.posted_by?(current_user) %>
+					<%= link_to "自分の投稿を見る",restaurant_post_path(@restaurant,@post),class: "btn-6" %>
+				<% else %>
+					<%= link_to "投稿する",new_restaurant_post_path(@restaurant),class: "btn-6" %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+ 	<div class="map-box">
+		<div id="map"></div>
+		<script>
+			function initMap(){
+			  let location ={lat: <%= @restaurant.latitude %>,lng: <%= @restaurant.longitude %>};
+			  let map = new google.maps.Map(document.getElementById('map'),{
+			  	zoom: 16,
+			  	center: location
+			  });
+
+			  let marker = new google.maps.Marker({
+			  	position: location,
+			  	map: map
+			  });
+			}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAPKEY'] %>&callback=initMap" async defer>
+		</script>
+	</div>
+</div>
+<div class="r-info-middle">
+	<div class="r-averages">
+		<%= render "restaurants/average", restaurant: @restaurant %>
+	</div>
+	<div class="bxslider-box">
+		<ul class="bxslider">
+			<% @posts.each do |post| %>
+
+				<% post.post_images.each do |post_image| %>
+					<li>
+						<%= link_to restaurant_post_path(post.restaurant_id,post_image.post_id) do %>
+							<%= attachment_image_tag post_image ,:post_image, size:"100x100"%>
+						<% end %>
+					</li>
+				<% end %>
+
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+<div class="r-post-all">
+ <h3>みんなの投稿</h3>
+
+	<table class="r-user-posts">
+		<thead>
+			<th>ユーザ名</th>
+			<th>評価</th>
+			<th>コメント</th>
+			<th>タグ</th>
+			<th>リンク</th>
+		</thead>
+		<tbody>
+			<% @restaurant.posts.each do |post| %>
+			<tr>
+				<td><%= post.user.user_name %></td>
+				<td><%= post.rate %></td>
+				<td><%= post.comment.truncate(30) %></td>
+				<td><%= post.tag_list %></td>
+				<td><%= link_to "詳細", restaurant_post_path(@restaurant,post),class: "btn" %></td>
+			</tr>
+			<% end %>
+		</tbody>
+
+	</table>
+
+
+</div>
+
+
+
+
+

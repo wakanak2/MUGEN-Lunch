@@ -1,0 +1,7 @@
+
+<% if restaurant.favorited_by?(current_user) %>
+
+  <%= link_to "お気に入り解除" ,restaurant_favorite_path(restaurant,favorite), class: "btn-unfav", method: :delete, remote: true %>
+<% else %>
+  <%= link_to "お気に入りする" ,restaurant_favorites_path(restaurant,favorite), class: "btn-fav" ,method: :post,remote: true %>
+<% end %>

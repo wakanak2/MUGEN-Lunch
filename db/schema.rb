@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_065859) do
+ActiveRecord::Schema.define(version: 2020_07_20_084643) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 2020_07_07_065859) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name_kana"
   end
 
   create_table "post_images", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
-    t.string "post_image"
+    t.string "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,13 +45,20 @@ ActiveRecord::Schema.define(version: 2020_07_07_065859) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "restaurant_genres", force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name", null: false
     t.string "branch"
     t.string "name_kana", null: false
     t.string "postcode", null: false
     t.string "address", null: false
-    t.integer "tel"
+    t.string "tel"
     t.time "weekday_start"
     t.time "weekday_finish"
     t.time "weekend_start"
@@ -59,11 +67,12 @@ ActiveRecord::Schema.define(version: 2020_07_07_065859) do
     t.integer "seat"
     t.text "homepage"
     t.boolean "standing", default: false, null: false
-    t.string "smoking", default: "0", null: false
+    t.integer "smoking", default: 0, null: false
     t.boolean "closed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "genre_id"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -102,12 +111,13 @@ ActiveRecord::Schema.define(version: 2020_07_07_065859) do
     t.string "name_kanji", default: "", null: false
     t.string "name_kana", default: "", null: false
     t.text "introduction", default: ""
-    t.string "user_image"
+    t.string "user_image_id"
     t.string "mypoint_postcode", default: ""
     t.string "mypoint_address", default: ""
     t.string "user_name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admission_status", default: true, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
