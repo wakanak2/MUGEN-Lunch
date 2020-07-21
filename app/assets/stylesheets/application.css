@@ -1,0 +1,364 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+
+*= require bxslider
+*= require_tree .
+*= require_self
+*/
+/*noto display: block;sans-regular*/
+@font-face {
+  font-family: 'notosans';
+  src: url("NotoSansJP-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*notosans-medium*/
+@font-face {
+  font-family: 'notosans-medium';
+  src: url("NotoSansJP-Medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*notosans-bold*/
+@font-face {
+  font-family: 'notosans-bold';
+  src: url("NotoSansJP-Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*montserrat-regular*/
+@font-face {
+  font-family: 'montserrat';
+  src: url("MontserratSubrayada-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/*montserrat-bold*/
+@font-face {
+  font-family: 'montserrat-bold';
+  src: url("MontserratSubrayada-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: bold; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*font-base*/
+body {
+  font-family: 'notosans'; }
+
+a {
+  text-decoration: none; }
+
+/*ain-table*/
+table, .r-info_inner table.restaurant-info, .new-comment .p-form-box {
+  background: #fff;
+  width: 100%;
+  table-layout: fixed; }
+  table th, .r-info_inner table.restaurant-info th, .new-comment .p-form-box th, table td, .r-info_inner table.restaurant-info td, .new-comment .p-form-box td {
+    padding: 8px; }
+
+/*th-width*/
+th.th-w30 {
+  width: 30%; }
+
+th.th-w70 {
+  width: 70%; }
+
+/*form-base*/
+.input-default, .devise-form .field input[type=email], .devise-form .field [type=password], .devise-form .field [type=text], .user-info input, .container .user-edit td input[type=email], .container .user-edit td [type=text], .inner .restaurant-formbox table.restaurant-form input[type=text], .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box input[type=text], .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box input[type=text], .inner .restaurant-formbox table.restaurant-form [type=time], .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box [type=time], .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box [type=time], .new-comment .p-form-box input[type=text] {
+  padding: 8px 3px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #e3e3e3; }
+  .input-default:focus, .devise-form .field input[type=email]:focus, .devise-form .field [type=password]:focus, .devise-form .field [type=text]:focus, .user-info input:focus, .container .user-edit td input[type=email]:focus, .container .user-edit td [type=text]:focus, .inner .restaurant-formbox table.restaurant-form input[type=text]:focus, .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box input[type=text]:focus, .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box input[type=text]:focus, .inner .restaurant-formbox table.restaurant-form [type=time]:focus, .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box [type=time]:focus, .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box [type=time]:focus, .new-comment .p-form-box input[type=text]:focus {
+    border: 1px solid #ea5549;
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(234, 85, 73, 0.5); }
+
+/*btn-base*/
+.btn, .devise-form .actions .btn-1, .user-info .btn-1, .user-show-btns .btn2, .container .btn-1, .inner .btn-4, .r-info-high .r-edit-btn, .new-comment .r-edit-btn, .show-comment .r-edit-btn, .new-comment .p-form-box .btn-4, .show-comment .p-info-box .p-edit-btn {
+  padding: 13px;
+  text-align: center;
+  color: #ea5549;
+  border: 2px solid #ea5549;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff; }
+  .btn:hover, .devise-form .actions .btn-1:hover, .user-info .btn-1:hover, .user-show-btns .btn2:hover, .container .btn-1:hover, .inner .btn-4:hover, .r-info-high .r-edit-btn:hover, .new-comment .r-edit-btn:hover, .show-comment .r-edit-btn:hover, .new-comment .p-form-box .btn-4:hover, .show-comment .p-info-box .p-edit-btn:hover {
+    background: #ea5549;
+    color: #fff; }
+
+.btn-sub, .return-r-info .btn-5, .r-info-high .r-info-box .r-info-btns .btn-6, .new-comment .r-info-box .r-info-btns .btn-6, .show-comment .r-info-box .r-info-btns .btn-6 {
+  padding: 13px;
+  text-align: center;
+  color: #ffd900;
+  border: 2px solid #ffd900;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff; }
+  .btn-sub:hover, .return-r-info .btn-5:hover, .r-info-high .r-info-box .r-info-btns .btn-6:hover, .new-comment .r-info-box .r-info-btns .btn-6:hover, .show-comment .r-info-box .r-info-btns .btn-6:hover {
+    background: #ffd900;
+    color: #fff; }
+
+.btn-fav {
+  padding: 13px;
+  text-align: center;
+  color: #FFC7AF;
+  border: 2px solid #FFC7AF;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: #fff; }
+  .btn-fav:hover {
+    background: #FFC7AF;
+    color: #fff; }
+
+.btn-unfav {
+  background: #FFC7AF;
+  color: #fff;
+  padding: 13px;
+  text-align: center;
+  border: 2px solid #FFC7AF;
+  border-radius: 3px;
+  transition: 0.4s; }
+  .btn-unfav:hover {
+    color: #FFC7AF;
+    background-color: #fff; }
+
+/*title*/
+h2 {
+  color: #ea5549;
+  font-family: 'montserrat-bold';
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0 35%; }
+  h2:before, h2:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 35%;
+    height: 3px;
+    border-top: 3px solid #ea5549; }
+  h2:before {
+    left: 0; }
+  h2:after {
+    right: 0; }
+
+/*user-image*/
+.user-image {
+  margin: 30px;
+  border-radius: 50%;
+  background-position: center; }
+
+/*header*/
+header {
+  width: 100%; }
+  header .header-content ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0; }
+    header .header-content ul li {
+      padding: 30px 15px; }
+    header .header-content ul li:hover {
+      background-color: #e3e3e3; }
+
+/*devise-base*/
+.devise-form {
+  font-family: 'notosans';
+  padding: 5% 30%; }
+  .devise-form .field input[type=email], .devise-form .field [type=password], .devise-form .field [type=text] {
+    margin-bottom: 10px; }
+  .devise-form .field input[type=check] {
+    border-radius: 4px;
+    border: 2px solid #e3e3e3; }
+  .devise-form .actions {
+    width: 100%; }
+    .devise-form .actions .btn-1 {
+      width: 50%;
+      margin: 20px 25%; }
+
+.user-info {
+  width: 60%;
+  padding: 5% 0;
+  position: relative;
+  margin: auto; }
+  .user-info input {
+    width: 100%;
+    margin: 0 25%; }
+  .user-info .btn-1 {
+    width: 50%;
+    width: 50%;
+    margin: 20px 25%; }
+
+.user-show {
+  margin: 5% 20%;
+  display: flex;
+  border-radius: 8px;
+  border: 5px solid #ea5549;
+  padding: 20px 5px; }
+  .user-show table.table2, .user-show .new-comment .table2.p-form-box, .new-comment .user-show .table2.p-form-box {
+    flex-grow: 3; }
+
+.user-show-btns {
+  margin: 5% 20%;
+  position: relative;
+  display: flex;
+  justify-content: space-around; }
+  .user-show-btns .btn2 {
+    margin: 0 30px;
+    flex-grow: 1; }
+
+.container .user-edit {
+  margin: 5% 15%;
+  display: flex;
+  border-radius: 8px;
+  border: 5px solid #ea5549;
+  padding: 20px 5px; }
+  .container .user-edit td {
+    text-align: center; }
+    .container .user-edit td .user-image {
+      border-radius: 50%;
+      background-position: center; }
+.container .btn-1 {
+  width: 50%;
+  margin: 20px 25%; }
+
+.inner .restaurant-formbox {
+  margin: 5% 15%;
+  display: flex;
+  border-radius: 8px;
+  border: 5px solid #ea5549;
+  padding: 20px 20px; }
+  .inner .restaurant-formbox table.restaurant-form, .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box, .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box {
+    background: #fff;
+    width: 100%;
+    table-layout: fixed; }
+    .inner .restaurant-formbox table.restaurant-form th.th3, .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box th.th3, .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box th.th3 {
+      width: 25%; }
+    .inner .restaurant-formbox table.restaurant-form th.th4, .inner .restaurant-formbox .new-comment .restaurant-form.p-form-box th.th4, .new-comment .inner .restaurant-formbox .restaurant-form.p-form-box th.th4 {
+      width: 15%; }
+.inner .btn-4 {
+  width: 50%;
+  margin: 20px 25%; }
+
+.return-r-info {
+  width: 100%;
+  display: flex; }
+  .return-r-info .btn-5 {
+    width: 25%;
+    margin: 1% 15% 0 60%; }
+    .return-r-info .btn-5:hover {
+      background: #ffd900;
+      color: #fff; }
+
+.r-info_inner table.restaurant-info, .r-info_inner .new-comment .restaurant-info.p-form-box, .new-comment .r-info_inner .restaurant-info.p-form-box {
+  border-collapse: collapse; }
+.r-info_inner th, .r-info_inner td, .r-info_inner tr {
+  border-bottom: solid 1px #e3e3e3; }
+.r-info_inner th.th1 {
+  width: 30%; }
+.r-info_inner th.th2 {
+  width: 70%; }
+
+.r-info-high, .new-comment, .show-comment {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px; }
+  .r-info-high .r-edit-btn, .new-comment .r-edit-btn, .show-comment .r-edit-btn {
+    float: right; }
+  .r-info-high .map-box, .new-comment .map-box, .show-comment .map-box {
+    width: 50%; }
+    .r-info-high .map-box #map, .new-comment .map-box #map, .show-comment .map-box #map {
+      height: 100%;
+      width: 100%; }
+  .r-info-high .r-info-box, .new-comment .r-info-box, .show-comment .r-info-box {
+    width: 50%; }
+    .r-info-high .r-info-box .r-info-btns, .new-comment .r-info-box .r-info-btns, .show-comment .r-info-box .r-info-btns {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around; }
+      .r-info-high .r-info-box .r-info-btns .btn-6, .new-comment .r-info-box .r-info-btns .btn-6, .show-comment .r-info-box .r-info-btns .btn-6 {
+        margin: 0 12.5%; }
+
+.new-comment .p-form-box {
+  width: 50%;
+  padding: 10px; }
+  .new-comment .p-form-box .btn-4 {
+    width: 25%;
+    margin: 10px 37.5%; }
+.new-comment .r-info-box {
+  width: 50%; }
+
+.show-comment .p-info-box {
+  margin: 3%;
+  width: 50%;
+  padding: 15px;
+  background-color: #FFC7AF; }
+  .show-comment .p-info-box .p-edit-btn {
+    width: 25%;
+    margin: 10px 37.5%; }
+.show-comment .r-info-box {
+  width: 50%;
+  padding: 15px; }
+
+h3 {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 5%; }
+
+.about-inner {
+  width: 100%; }
+  .about-inner .about-intro {
+    display: flex;
+    justify-content: center; }
+    .about-inner .about-intro .emphasis {
+      font-size: 40px;
+      font-weight: bold; }
+
+.feature {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-around; }
+  .feature .feature-box {
+    margin: 0 5%;
+    width: 20%; }
+    .feature .feature-box .about-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto; }
+
+.unsubscribe-inner .unsubscribe-box {
+  margin: 15px 0;
+  justify-content: center; }
+  .unsubscribe-inner .unsubscribe-box p {
+    text-align: center; }
+.unsubscribe-inner .unsubscribe-btns {
+  display: flex;
+  margin: 15px;
+  justify-content: center; }
+  .unsubscribe-inner .unsubscribe-btns .btn, .unsubscribe-inner .unsubscribe-btns .devise-form .actions .btn-1, .devise-form .actions .unsubscribe-inner .unsubscribe-btns .btn-1, .unsubscribe-inner .unsubscribe-btns .user-info .btn-1, .user-info .unsubscribe-inner .unsubscribe-btns .btn-1, .unsubscribe-inner .unsubscribe-btns .user-show-btns .btn2, .user-show-btns .unsubscribe-inner .unsubscribe-btns .btn2, .unsubscribe-inner .unsubscribe-btns .container .btn-1, .container .unsubscribe-inner .unsubscribe-btns .btn-1, .unsubscribe-inner .unsubscribe-btns .inner .btn-4, .inner .unsubscribe-inner .unsubscribe-btns .btn-4, .unsubscribe-inner .unsubscribe-btns .r-info-high .r-edit-btn, .r-info-high .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .new-comment .r-edit-btn, .new-comment .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .show-comment .r-edit-btn, .show-comment .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .new-comment .p-form-box .btn-4, .new-comment .p-form-box .unsubscribe-inner .unsubscribe-btns .btn-4, .unsubscribe-inner .unsubscribe-btns .show-comment .p-info-box .p-edit-btn, .show-comment .p-info-box .unsubscribe-inner .unsubscribe-btns .p-edit-btn {
+    margin-right: 30px; }
+
+.bxslider {
+  width: 100%;
+  height: 400px; }
+
+/*# sourceMappingURL=application.css.map */

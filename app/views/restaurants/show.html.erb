@@ -1,2 +1,47 @@
-<h2>店舗詳細</h2>
-<% render "restaurants/restaurant_info", restaurant: @restaurant %>
+<h2>RESTAURANT INFO</h2>
+
+<div class="r-info-high">
+
+	<div class="r-info-box">
+		<%= link_to "店舗情報編集", edit_restaurant_path(@restaurant),class: "r-edit-btn" %>
+
+		<%= render "restaurants/info", restaurant: @restaurant %>
+
+		<div class="r-info-btns">
+			<% if @restaurant.favorited_by?(current_user) %>
+			  <%= link_to  "お気に入り解除" ,restaurant_favorites_path(@restaurant), class: "btn-unfav", method: :delete %>
+			<% else %>
+			  <%= link_to "お気に入りする" ,restaurant_favorites_path(@restaurant), class: "btn-fav" ,method: :post %>
+			<% end %>
+			<%= link_to "口コミを投稿する",new_restaurant_post_path(@restaurant),class: "btn-6" %>
+		</div>
+	</div>
+
+ 	<div class="map-box">
+		<div id="map"></div>
+		<script>
+			function initMap(){
+			  let location ={lat: <%= @restaurant.latitude %>,lng: <%= @restaurant.longitude %>};
+			  let map = new google.maps.Map(document.getElementById('map'),{
+			  	zoom: 16,
+			  	center: location
+			  });
+
+			  let marker = new google.maps.Marker({
+			  	position: location,
+			  	map: map
+			  });
+			}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAPKEY'] %>&callback=initMap" async defer>
+		</script>
+	</div>
+</div>
+
+<%= render "restaurants/average", restaurant: @restaurant %>
+
+
+
+
+
+

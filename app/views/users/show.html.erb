@@ -1,43 +1,52 @@
-<h2>マイページ</h2>
+<div class="container">
+	<h2>MY PAGE</h2>
 
-<table>
-	<thead>
-		<th></th>
-	</thead>
+	<div class="inner">
+		<div class="user-show">
+			<%= attachment_image_tag @user, :user_image, size:"200x200", fallback: "no_image.png", class: "user-image"%>
+			<table class="table2">
+				<thead>
+					<th class=th-w30></th>
+					<th class=th-w70></th>
+				</thead>
 
-	<tbody>
-		<tr>
-			<td>ユーザ名</td>
-			<td><%= @user.user_name %></td>
-		</tr>
+				<tbody>
+					<tr>
+						<td>ユーザ名</td>
+						<td><%= @user.user_name %></td>
+					</tr>
 
-		<tr>
-			<td>名前</td>
-			<td><%= @user.name_kanji %></td>
-		</tr>
+					<tr>
+						<td>名前</td>
+						<td><%= @user.name_kanji %></td>
+					</tr>
 
-		<tr>
-			<td>名前（カナ）</td>
-			<td><%= @user.name_kana %></td>
-		</tr>
+					<tr>
+						<td>名前（カナ）</td>
+						<td><%= @user.name_kana %></td>
+					</tr>
 
-		<tr>
-			<td>メールアドレス</td>
-			<td><%= @user.email %></td>
-		</tr>
+					<tr>
+						<td>メールアドレス</td>
+						<td><%= @user.email %></td>
+					</tr>
 
-		<tr>
-			<td>My ポイント</td>
-			<td><%= @user.mypoint_postcode %><%= @user.mypoint_address %></td>
-		</tr>
+					<tr>
+						<td>My ポイント</td>
+						<td><%= @user.mypoint_postcode %><%= @user.mypoint_address %></td>
+					</tr>
 
-		<tr>
-			<td>紹介</td>
-			<td><%= @user.introduction %></td>
-		</tr>
-	</tbody>
-</table>
+					<tr>
+						<td>紹介</td>
+						<td><%= @user.introduction %></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="user-show-btns">
+			<%= link_to "編集する", edit_user_path ,class: "btn2"%>
+			<%= link_to "パスワードの変更", edit_user_registration_path,class: "btn2" %>
+		</div>
 
-<%= link_to "編集する", edit_user_path %>
-<p>
-<%= link_to "パスワードの変更", edit_user_registration_path %></p>
+	</div>
+</div>

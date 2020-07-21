@@ -1,0 +1,28 @@
+<h2>FAVORITES</h2>
+
+<table>
+	<thead>
+		<th></th>
+		<th></th>
+	</thead>
+	<tbody>
+		<tr>
+		<% @favorites.each do |favorite| %>
+			<td class="td-w70">
+				<%= favorite.restaurant.name %>
+				<div id="star-rate-#{favorite.restaurant.id}"></div>
+				<%= favorite.restaurant.address %>
+
+			</td>
+			<td class="td-w30">
+				<%= link_to "詳細", restaurant_path(favorite.restaurant.id), class: "btn-sub" %>
+				<% if favorite.restaurant.favorited_by?(current_user) %>
+				  <%= link_to  "お気に入り解除" ,restaurant_favorite_path(favorite.restaurant.id,favorite.id), class: "btn-unfav", method: :delete %>
+				<% else %>
+				  <%= link_to "お気に入りする" ,restaurant_favorites_path(favorite.restaurant.id,favorite.id), class: "btn-fav" ,method: :post %>
+				<% end %>
+			</td>
+		<% end %>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,47 @@
+<div class="p-info-innner">
+	<table class="post-form">
+		<thead>
+			<th class="th1"></th>
+			<th class="th2"></th>
+
+		</thead>
+
+		<tbody>
+			<% @posts.each do |post| %>
+			<tr>
+				<td>店名</td>
+				<td ><%= post.restaurant.name %></td>
+			</tr>
+
+			<tr>
+				<td>評価</td>
+				<td ><%= post.rate %></td>
+			</tr>
+
+			<tr>
+				<td>提供時間</td>
+				<td><%= post.time %>分</td>
+			</tr>
+
+			<tr>
+				<td>価格</td>
+				<td><%= post.price %>円</td>
+			</tr>
+
+			<tr>
+				<td>コメント</td>
+				<td><%= post.comment %></td>
+			</tr>
+
+			<tr>
+				<td>タグ</td>
+				<td><%= post.tag_list %></td>
+			</tr>
+				<%= link_to "編集する", edit_restaurant_post_path(post.restaurant.id,post.id) %>
+				<%= link_to "削除する", restaurant_post_path(post.restaurant.id,post.id), method: :delete %>
+
+		<% end %>
+		</tbody>
+	</table>
+
+</div>

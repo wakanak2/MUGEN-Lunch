@@ -1,0 +1,59 @@
+<div class="p-form-inner">
+	<%= form_with model:post, local: true, url: url do |f| %>
+		<div class="post-formbox">
+
+			 	<table class="post-form">
+					<thead>
+						<th class="th-w30"></th>
+						<th class="th-w70"></th>
+
+					</thead>
+
+					<tbody>
+						<tr>
+							<td><%= attachment_image_tag user.user_image ,:user_image, size:"100x100" ,fallback:"no_image.png", class: "user-image"%>
+							<td><%= user.user_name %></td>
+						</tr>
+
+						<tr>
+							<td><%= f.label :rate, "評価" %></td>
+							<td ><script src="/assets/javascripts/jquery.raty.js"></script>
+								<div id="star"><%= f.hidden_field :rate %></div>
+							</td>
+						</tr>
+
+						<tr>
+							<td><%= f.label :time, "提供時間(分)" %></td>
+							<td><%= f.text_field :time, autofocus: true, autocomplete: "rate", placeholder:"10" %></td>
+						</tr>
+
+						<tr>
+							<td><%= f.label :price, "価格（円）" %></td>
+							<td><%= f.text_field :price, autofocus: true, autocomplete: "price", placeholder:"500" %></td>
+						</tr>
+
+						<tr>
+							<td><%= f.label :comment, "コメント" %></td>
+							<td><%= f.text_field :comment, autofocus: true, autocomplete: "comment", placeholder:"コメント" %></td>
+						</tr>
+
+						<tr>
+							<td><%= f.label :tag_list, "タグ" %></td>
+							<td><%= f.text_field :tag_list,value: post.tag_list.join(','),placeholder: "安い,隠れ家" %></td>
+						</tr>
+
+						<tr>
+							<td><%= f.label :post_image, "画像" %></td>
+							<td>
+								<%= f.attachment_field :post_images_post_images , multiple: true %>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+		</div>
+
+		<%= f.submit submit,class: "btn-4"%>
+	<% end %>
+</div>

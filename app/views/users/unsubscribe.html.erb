@@ -1,0 +1,15 @@
+<div class="unsubscribe-inner">
+	<h2>UNSUBSCRIBE</h2>
+	<div class="unsubscribe-box">
+		<p>退会するとユーザ情報や<br>
+			過去の投稿・お気に入りを閲覧できなくなります。<br>
+		    退会する場合は、「退会する」をクリックしてください。</p>
+	</div>
+
+	<div class="unsubscribe-btns">
+	    <%= link_to "マイページに戻る",user_path,class: "btn"%>
+	    <%= link_to "退会する", withdraw_user_path(@user), method: :patch,"data-confirm" => "本当に退会しますか？",class: "btn-sub" %>
+	</div>
+</div>
+
+
