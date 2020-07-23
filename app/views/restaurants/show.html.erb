@@ -1,5 +1,9 @@
 <h2>RESTAURANT INFO</h2>
-
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 <div class="r-info-high">
 
 	<div class="r-info-box">

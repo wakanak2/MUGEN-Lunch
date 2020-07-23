@@ -14,7 +14,11 @@ class User < ApplicationRecord
   validates :name_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: '名前はフルネームで入力してください（スペースなし）'}
   validates :user_name, presence:{ message: '必須項目です。' }
   validates :introduction, length: { maximum: 200 }
-  validates :mypoint_postcode, format: {with: /\A\d{7}\z/, message: 'ハイフンなし７桁で入力してください。'}
-  validates :mypoint_address, presence:{ message: '必ず住所を入力してください。' }
+
+  # mypointの緯度経度取得
+  geocoded_by :mypoint_address
+  after_validation :geocode, if: :mypoint_address_changed?
+
+
 
 end

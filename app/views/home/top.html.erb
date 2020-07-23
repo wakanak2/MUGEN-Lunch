@@ -1,5 +1,10 @@
 
 <div class="top-background">
+	<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
 	<div class="top-ttl">Welcomo to    <br>MUGEN LUNCH</div>
 	<div class="top-links">

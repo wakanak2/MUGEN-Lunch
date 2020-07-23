@@ -17,7 +17,7 @@ class Restaurant < ApplicationRecord
 	validates :smoking,presence: true
 
 	# 住所の緯度経度取得
-  	geocoded_by :address
+	geocoded_by :address
 	after_validation :geocode, if: :address_changed?
 
 
@@ -44,17 +44,22 @@ class Restaurant < ApplicationRecord
 		self.posts.average(:rate).to_f.round(1)
 	end
 
+  class << self
+    def within_box(distance, latitude, longitude)
+      distance = distance
+      center_point = [latitude, longitude]
+      box = Geocoder::Calculations.bounding_box(center_point, distance)
+      self.within_bounding_box(box)
+    end
+  end
 
-	def mypoint_restaurant_search(user)
-		self.near()
-	end
 
 
 	ransacker :average do
 		Arel.sql('AVG("posts"."rate")')
 	end
 
-
+	
 	scope :sort_by_rate_avg_asc, -> {order(rate: :asc).left_joins(:posts)}
 	scope :sort_by_rate_avg_desc, -> {order(rate: :desc).left_joins(:posts)}
 

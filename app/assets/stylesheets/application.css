@@ -90,8 +90,15 @@ th.th-w70 {
     outline: none;
     box-shadow: 0 0 5px 1px rgba(234, 85, 73, 0.5); }
 
+.flash {
+  text-align: center;
+  color: #fff;
+  background-color: #FFC7AF;
+  width: 100%;
+  margin-top: 20px; }
+
 /*btn-base*/
-.btn, .devise-form .actions .btn-1, .user-show-outer .user-show-btns .btn2, .user-edit-outer .btn-user-edit, .r-new-outer .btn-r-new, .r-info-high .r-edit-btn, .new-comment .r-edit-btn, .show-post .r-edit-btn, .p-btn, .new-comment .p-form-box .p-btn, .show-post .p-info-box .p-show-btns .p-edit-btn {
+.btn, .devise-form .actions .btn-1, .user-show-outer .user-show-btns .btn2, .user-edit-outer .btn-user-edit, .r-new-outer .btn-r-new, .r-info-high .r-edit-btn, .new-comment .r-edit-btn, .show-post .r-edit-btn, .my-r-index-inner .my-r-index .my-r-show-link-btn, .p-btn, .new-comment .p-form-box .p-btn, .show-post .p-info-box .p-show-btns .p-edit-btn {
   padding: 13px;
   text-align: center;
   color: #ea5549;
@@ -100,7 +107,7 @@ th.th-w70 {
   transition: 0.4s;
   background-color: #fff;
   display: table-cell; }
-  .btn:hover, .devise-form .actions .btn-1:hover, .user-show-outer .user-show-btns .btn2:hover, .user-edit-outer .btn-user-edit:hover, .r-new-outer .btn-r-new:hover, .r-info-high .r-edit-btn:hover, .new-comment .r-edit-btn:hover, .show-post .r-edit-btn:hover, .p-btn:hover, .new-comment .p-form-box .p-btn:hover, .show-post .p-info-box .p-show-btns .p-edit-btn:hover {
+  .btn:hover, .devise-form .actions .btn-1:hover, .user-show-outer .user-show-btns .btn2:hover, .user-edit-outer .btn-user-edit:hover, .r-new-outer .btn-r-new:hover, .r-info-high .r-edit-btn:hover, .new-comment .r-edit-btn:hover, .show-post .r-edit-btn:hover, .my-r-index-inner .my-r-index .my-r-show-link-btn:hover, .p-btn:hover, .new-comment .p-form-box .p-btn:hover, .show-post .p-info-box .p-show-btns .p-edit-btn:hover {
     background: #ea5549;
     color: #fff; }
 
@@ -354,7 +361,7 @@ header {
   display: flex;
   margin: 15px;
   justify-content: center; }
-  .unsubscribe-inner .unsubscribe-btns .btn, .unsubscribe-inner .unsubscribe-btns .devise-form .actions .btn-1, .devise-form .actions .unsubscribe-inner .unsubscribe-btns .btn-1, .unsubscribe-inner .unsubscribe-btns .user-show-outer .user-show-btns .btn2, .user-show-outer .user-show-btns .unsubscribe-inner .unsubscribe-btns .btn2, .unsubscribe-inner .unsubscribe-btns .user-edit-outer .btn-user-edit, .user-edit-outer .unsubscribe-inner .unsubscribe-btns .btn-user-edit, .unsubscribe-inner .unsubscribe-btns .r-new-outer .btn-r-new, .r-new-outer .unsubscribe-inner .unsubscribe-btns .btn-r-new, .unsubscribe-inner .unsubscribe-btns .r-info-high .r-edit-btn, .r-info-high .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .new-comment .r-edit-btn, .new-comment .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .show-post .r-edit-btn, .show-post .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .p-btn, .unsubscribe-inner .unsubscribe-btns .show-post .p-info-box .p-show-btns .p-edit-btn, .show-post .p-info-box .p-show-btns .unsubscribe-inner .unsubscribe-btns .p-edit-btn {
+  .unsubscribe-inner .unsubscribe-btns .btn, .unsubscribe-inner .unsubscribe-btns .devise-form .actions .btn-1, .devise-form .actions .unsubscribe-inner .unsubscribe-btns .btn-1, .unsubscribe-inner .unsubscribe-btns .user-show-outer .user-show-btns .btn2, .user-show-outer .user-show-btns .unsubscribe-inner .unsubscribe-btns .btn2, .unsubscribe-inner .unsubscribe-btns .user-edit-outer .btn-user-edit, .user-edit-outer .unsubscribe-inner .unsubscribe-btns .btn-user-edit, .unsubscribe-inner .unsubscribe-btns .r-new-outer .btn-r-new, .r-new-outer .unsubscribe-inner .unsubscribe-btns .btn-r-new, .unsubscribe-inner .unsubscribe-btns .r-info-high .r-edit-btn, .r-info-high .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .new-comment .r-edit-btn, .new-comment .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .show-post .r-edit-btn, .show-post .unsubscribe-inner .unsubscribe-btns .r-edit-btn, .unsubscribe-inner .unsubscribe-btns .my-r-index-inner .my-r-index .my-r-show-link-btn, .my-r-index-inner .my-r-index .unsubscribe-inner .unsubscribe-btns .my-r-show-link-btn, .unsubscribe-inner .unsubscribe-btns .p-btn, .unsubscribe-inner .unsubscribe-btns .show-post .p-info-box .p-show-btns .p-edit-btn, .show-post .p-info-box .p-show-btns .unsubscribe-inner .unsubscribe-btns .p-edit-btn {
     margin-right: 30px; }
 
 /*restaurats*/
@@ -459,14 +466,14 @@ header {
       margin: 20px 0; }
       .r-index-inner .r-search-form .new-r .btn-new-r {
         display: block; }
-  .r-index-inner .r-index {
+  .r-index-inner .r-index, .r-index-inner .my-r-index-inner .my-r-index, .my-r-index-inner .r-index-inner .my-r-index {
     width: 80%;
     padding: 30px; }
-    .r-index-inner .r-index th, .r-index-inner .r-index tr, .r-index-inner .r-index td {
+    .r-index-inner .r-index th, .r-index-inner .my-r-index-inner .my-r-index th, .my-r-index-inner .r-index-inner .my-r-index th, .r-index-inner .r-index tr, .r-index-inner .my-r-index-inner .my-r-index tr, .my-r-index-inner .r-index-inner .my-r-index tr, .r-index-inner .r-index td, .r-index-inner .my-r-index-inner .my-r-index td, .my-r-index-inner .r-index-inner .my-r-index td {
       border-bottom: solid 1px #e3e3e3; }
-    .r-index-inner .r-index .r-show-link {
+    .r-index-inner .r-index .r-show-link, .r-index-inner .my-r-index-inner .my-r-index .r-show-link, .my-r-index-inner .r-index-inner .my-r-index .r-show-link {
       padding: 5px; }
-      .r-index-inner .r-index .r-show-link .r-show-link-btn {
+      .r-index-inner .r-index .r-show-link .r-show-link-btn, .r-index-inner .my-r-index-inner .my-r-index .r-show-link .r-show-link-btn, .my-r-index-inner .r-index-inner .my-r-index .r-show-link .r-show-link-btn {
         padding: 5px;
         text-align: center;
         color: #ea5549;
@@ -474,9 +481,15 @@ header {
         border-radius: 3px;
         transition: 0.4s;
         background-color: #fff; }
-        .r-index-inner .r-index .r-show-link .r-show-link-btn:hover {
+        .r-index-inner .r-index .r-show-link .r-show-link-btn:hover, .r-index-inner .my-r-index-inner .my-r-index .r-show-link .r-show-link-btn:hover, .my-r-index-inner .r-index-inner .my-r-index .r-show-link .r-show-link-btn:hover {
           background: #ea5549;
           color: #fff; }
+
+/*MY POINT*/
+.my-r-index-inner {
+  display: flex; }
+  .my-r-index-inner .my-r-index th, .my-r-index-inner .my-r-index tr, .my-r-index-inner .my-r-index td {
+    border-bottom: solid 1px #e3e3e3; }
 
 .p-btn {
   width: 50%;

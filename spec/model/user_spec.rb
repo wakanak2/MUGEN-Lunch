@@ -27,27 +27,16 @@ RSpec.describe 'userモデルテスト', type: :model do
 				test_user.name_kana =''
 				is_expected.to eq false;
 			end
-			it 'カタカナであること' do
+			it '漢字でエラーになること' do
 				test_user.name_kana = '田中'
 				is_expected.to eq false;
 			end
-		end
-
-		context 'mypoint_postcodeカラム' do
-			let(:test_user){ user }
-			it '空欄でないこと' do
-				test_user.mypoint_postcode =''
-				is_expected.to eq false;
+			it 'カタカナであること' do
+				test_user.name_kana = 'タナカ'
+				is_expected.to eq true;
 			end
 		end
 
-		context 'mypoint_addressカラム' do
-			let(:test_user){ user }
-			it '空欄でないこと' do
-				test_user.mypoint_address =''
-				is_expected.to eq false;
-			end
-		end
 	end
 
 end

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def unsubscribe
+
   end
 
   def withdraw
@@ -34,10 +35,15 @@ class UsersController < ApplicationController
                                  :name_kanji,
                                  :name_kana,
                                  :user_name,
-                                 :user_image,
+                                 :user_image_id,
                                  :mypoint_postcode,
                                  :mypoint_address,
-                                 :introduction)
+                                 :introduction,
+                                 :admission_status,
+                                 :password,
+                                 :latitude,
+                                 :longitude
+                                  )
 
   end
 

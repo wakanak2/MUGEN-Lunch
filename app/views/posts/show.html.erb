@@ -1,4 +1,9 @@
 <h2>POST SHOW</h2>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
 <div class="show-post">
 	<div class="r-info-box">

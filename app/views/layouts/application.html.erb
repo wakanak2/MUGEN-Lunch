@@ -22,6 +22,7 @@
         <ul>
           <p>ようこそ、<%= current_user.name_kanji %>さん</p>
           <li><%= link_to "マイページ", user_path(current_user) %></li>
+          <li><%= link_to "My Point", restaurants_search_path(current_user) %></li>
           <li><%= link_to "お気に入り", favorites_path %></li>
           <li><%= link_to "投稿一覧", posts_path %></li>
           <li><%= link_to "店舗一覧", restaurants_path %></li>

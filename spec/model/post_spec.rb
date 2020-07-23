@@ -27,10 +27,6 @@ require 'rails_helper'
                   post.time = 15
                   expect(post.valid?).to eq true;
                 end
-                it '全角数字でエラーとなること' do
-                  post.time ='１５'.
-                  expect(post.valid?).to eq false;
-                end
             end
 
             context 'priceカラム' do
@@ -41,10 +37,6 @@ require 'rails_helper'
                 it '半角数字であること' do
                   post.price = 15
                   expect(post.valid?).to eq true;
-                end
-                it '全角数字でエラーとなること' do
-                  post.price ='15'
-                  expect(post.valid?).to eq false;
                 end
             end
         end

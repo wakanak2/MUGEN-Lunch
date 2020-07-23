@@ -106,7 +106,7 @@ th.th-w70{
  /*form-base*/
 .input-default{
 	padding: 8px 3px;
-	width:100%;
+	width: 100%;
 	border-radius: 4px;
 	border: 2px solid #e3e3e3;
 
@@ -115,6 +115,14 @@ th.th-w70{
 		outline: none;
 		box-shadow: 0 0 5px 1px rgba(234, 85, 73, .5);
 	}
+}
+
+.flash{
+	text-align: center;
+	color: #fff;
+	background-color: #FFC7AF;
+	width: 100%;
+	margin-top: 20px;
 }
 
  /*btn-base*/
@@ -685,6 +693,22 @@ header {
 	}
 }
 
+/*MY POINT*/
+.my-r-index-inner{
+	display: flex;
+	.my-r-index{
+		@extend .r-index;
+
+		th,tr,td{
+			border-bottom: solid 1px #e3e3e3;
+		}
+
+		.my-r-show-link-btn{
+			@extend .btn;
+		}
+	}
+}
+
 .p-btn{
 @extend .btn;
 width:50%;
@@ -720,6 +744,7 @@ margin: 20px 25%;
 		width:50%;
 	}
 }
+
 
 /*post-show*/
 .show-post{
@@ -786,6 +811,7 @@ margin: 20px 25%;
 		}
 	}
 }
+
 
 
 

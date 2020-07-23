@@ -41,12 +41,12 @@ RSpec.describe 'restaurantモデルテスト', type: :model do
 		end
 		context 'telカラム' do
 			let(:test_restaurant){ restaurant }
-			it '数字10桁か11桁であること' do
-				test_restaurant.tel ='1122223333'
+			it '数字9桁でエラーとなること' do
+				test_restaurant.tel ='122223333'
 				is_expected.to eq false;
 			end
 			let(:test_restaurant){ restaurant }
-			it '数字10桁か11桁であること' do
+			it '数字12桁でエラーとなること' do
 				test_restaurant.tel ='111122223333'
 				is_expected.to eq false;
 			end
@@ -55,13 +55,8 @@ RSpec.describe 'restaurantモデルテスト', type: :model do
 		context 'seatカラム' do
 			let(:test_restaurant){ restaurant }
 			it '半角数字であること' do
-				test_restaurant.seat = '15'
+				test_restaurant.seat = "15"
 				is_expected.to eq true;
-			end
-
-			it '全角数字でエラーであること' do
-				test_restaurant.seat ='１５'
-				is_expected.to eq false;
 			end
 		end
 

@@ -1,0 +1,43 @@
+<h2>MY POINT</h2>
+
+<div class="my-r-index-inner">
+
+
+	<div class="my-r-index">
+		<table>
+			<thead>
+				<th>店名</th>
+				<th>住所</th>
+				<th>平均点</th>
+				<th>詳細リンク</th>
+			</thead>
+
+			<tbody>
+				<% @restaurants.each do |restaurant| %>
+				<tr>
+					<td><%= restaurant.name %></td>
+					<td><%= restaurant.address %></td>
+					<td>
+						<div id="star-rate-<%= restaurant.id %>">
+							<%= restaurant.restaurant_ave_rate %>
+						</div>
+						<script>
+							$('#star-rate-<%= restaurant.id %>').raty({
+							size: 36,
+							starOff:  '<%= asset_path('star-off.png') %>',
+							starOn : '<%= asset_path('star-on.png') %>',
+							starHalf: '<%= asset_path('star-half.png') %>',
+							half: true,
+							readOnly: true,
+							score: <%= restaurant.restaurant_ave_rate %>,
+							});
+						</script>
+					</td>
+					<td><%= link_to "店舗詳細",restaurant_path(restaurant) ,class: "my-r-show-link-btn" %></td>
+				</tr>
+
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

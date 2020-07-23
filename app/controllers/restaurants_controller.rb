@@ -53,6 +53,16 @@ class RestaurantsController < ApplicationController
 		end
 	end
 
+	def search
+		if current_user.latitude.present?
+		latitude = current_user.latitude.to_f
+		longitude = current_user.longitude.to_f
+		@restaurants = Restaurant.within_box(0.621371, latitude, longitude).page(params[:page])
+		else
+		redirect_to edit_user_path(current_user.id)
+		flash[:notice] = "My pointを登録してください。"
+		end
+	end
 
 
 	private
