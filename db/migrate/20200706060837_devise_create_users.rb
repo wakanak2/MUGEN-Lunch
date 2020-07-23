@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name_kanji, null: false, default: ""
       t.string :name_kana, null: false, default: ""
-      t.text :introduction, default: ""
+      t.text :introduction
       t.string :user_image_id
       t.string :mypoint_postcode, default: ""
       t.string :mypoint_address, default: ""
