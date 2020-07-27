@@ -20,9 +20,9 @@
 $(function(){
 	$('#star').raty({
 		size: 36,
-		starOff: "/assets/star-off.png",
-		starOn: "/assets/star-on.png",
-		starHalf:"/assets/star-half.png",
+		starOff:  "#{asset_path('star-off.png')}",
+		starOn: "#{asset_path('star-on.png')}",
+		starHalf:"#{asset_path('star-half.png')}",
 		scoreName: 'post[rate]',
 		half: true,
 	});
@@ -33,9 +33,9 @@ $(function(){
  var id = gon.restaurant_id
   $(`#star-rate-${id}`).raty({
 		size: 36,
-		starOff: "/assets/star-off.png",
-		starOn: "/assets/star-on.png",
-		starHalf:"/assets/star-half.png",
+		starOff:  "#{asset_path('star-off.png')}",
+		starOn: "#{asset_path('star-on.png')}",
+		starHalf:"#{asset_path('star-half.png')}",
 		half: true,
 		readOnly: true,
 		score:`${gon.restaurant_average}`,

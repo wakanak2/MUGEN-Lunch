@@ -59,7 +59,8 @@ class RestaurantsController < ApplicationController
 		longitude = current_user.longitude.to_f
 		myrestaurants = Restaurant.within_box(0.621371, latitude, longitude)
 		@q = myrestaurants.ransack(params[:q])
-		@restaurants = @q.result.page(params[:page]).per(5)
+		@restaurants = @q.result
+		@restaurants = @restaurants.page(params[:page]).per(5)
 		else
 		redirect_to edit_user_path(current_user.id)
 		flash[:notice] = "My pointを登録してください。"
