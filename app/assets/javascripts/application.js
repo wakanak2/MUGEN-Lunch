@@ -16,32 +16,6 @@
 //= require_tree .
 
 
-//星評価
-$(function(){
-	$('#star').raty({
-		size: 36,
-		starOff:  "#{asset_path('star-off.png')}",
-		starOn: "#{asset_path('star-on.png')}",
-		starHalf:"#{asset_path('star-half.png')}",
-		scoreName: 'post[rate]',
-		half: true,
-	});
-});
-
-//星評価平均
-$(function(){
- var id = gon.restaurant_id
-  $(`#star-rate-${id}`).raty({
-		size: 36,
-		starOff:  "#{asset_path('star-off.png')}",
-		starOn: "#{asset_path('star-on.png')}",
-		starHalf:"#{asset_path('star-half.png')}",
-		half: true,
-		readOnly: true,
-		score:`${gon.restaurant_average}`,
-		});
-});
-
 
 //bxslider
 $(function(){

@@ -17,7 +17,20 @@
 
 						<tr>
 							<td><%= f.label :rate, "評価" %></td>
-							<td ><div id="star"><%= f.hidden_field :rate %></div></td>
+							<td ><div id="star"><%= f.hidden_field :rate %></div>
+							<!-- raty評価 -->
+							<script>
+								$('#star').raty({
+								size: 36,
+								starOff:  '<%= asset_path('star-off.png') %>',
+								starOn : '<%= asset_path('star-on.png') %>',
+								starHalf: '<%= asset_path('star-half.png') %>',
+								scoreName: 'post[rate]',
+								half: true,
+								});
+							</script>
+							<!-- raty評価 -->
+						</td>
 						</tr>
 
 						<tr>

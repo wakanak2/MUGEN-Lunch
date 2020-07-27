@@ -10,7 +10,21 @@
 			<tr>
 				<td>平均評価</td>
 				<td>
-					<div id="star-rate-<%= restaurant.id %>"><%= restaurant.posts.average(:rate).to_f.round(1) %></div></td>
+					<div id="star-rate-<%= restaurant.id %>"><%= restaurant.restaurant_ave_rate %></div>
+					<!-- raty星評価 -->
+					<script>
+						$('#star-rate-<%= restaurant.id %>').raty({
+						size: 36,
+						starOff:  '<%= asset_path('star-off.png') %>',
+						starOn : '<%= asset_path('star-on.png') %>',
+						starHalf: '<%= asset_path('star-half.png') %>',
+						half: true,
+						readOnly: true,
+						score: <%= restaurant.restaurant_ave_rate %>,
+						});
+					</script>
+					<!-- raty星評価 -->
+					</td>
 			</tr>
 
 			<tr>

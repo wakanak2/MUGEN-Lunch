@@ -27,8 +27,6 @@ class RestaurantsController < ApplicationController
 	def show
 		@restaurant = Restaurant.find(params[:id])
 		@posts = @restaurant.posts.includes([:taggings,:user,:post_images])
-		gon.restaurant_id = @restaurant.id
-		gon.restaurant_average = @restaurant.posts.average(:rate).to_f.round(1)
 		@post = @posts.find_by(user_id: current_user.id)
 		@favorite = @restaurant.favorites.find_by(user_id: current_user.id)
 	end
@@ -59,8 +57,7 @@ class RestaurantsController < ApplicationController
 		longitude = current_user.longitude.to_f
 		myrestaurants = Restaurant.within_box(0.621371, latitude, longitude)
 		@q = myrestaurants.ransack(params[:q])
-		@restaurants = @q.result
-		@restaurants = @restaurants.page(params[:page]).per(5)
+		@restaurants = @q.result.page(params[:page]).per(5)
 		else
 		redirect_to edit_user_path(current_user.id)
 		flash[:notice] = "My pointを登録してください。"

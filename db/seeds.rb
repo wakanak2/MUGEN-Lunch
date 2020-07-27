@@ -9,8 +9,8 @@
 	User.create!(
 	email: "a@a",
     password: "123456",
-    name_kanji: "山田　花子",
-    name_kana: "ヤマダ　ハナコ",
+    name_kanji: "山田花子",
+    name_kana: "ヤマダハナコ",
     user_name: "yamahana",
 		)
 

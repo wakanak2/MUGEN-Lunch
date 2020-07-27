@@ -7,12 +7,12 @@ class FavoritesController < ApplicationController
 		if params[:keyword]
 			selection = params[:keyword]
     		@all_favorites = Favorite.sort(selection)
-    		@favorites = @all_favorites.includes([:restaurant]).where(user_id: @user.id)
-    		@favorites = @favorites.page(params[:page]).per(5)
+    		favorites = @all_favorites.includes([:restaurant]).where(user_id: @user.id)
+    		@favorites = favorites.page(params[:page]).per(5)
 
     	else
-		@favorites = current_user.favorites.includes([:restaurant])
-		@favorites = @favorites.page(params[:page]).per(5)
+		favorites = current_user.favorites.includes([:restaurant])
+		@favorites = favorites.page(params[:page]).per(5)
 
 		end
 	end
