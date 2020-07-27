@@ -6,6 +6,8 @@
     <% end %>
 <div class="r-info-high">
 
+
+<!-- 店舗情報 -->
 	<div class="r-info-box">
 		<% if user_signed_in? %>
 			<%= link_to "店舗情報編集", edit_restaurant_path(@restaurant),class: "r-edit-btn" %>
@@ -29,6 +31,7 @@
 		</div>
 	</div>
 
+	<!-- map -->
  	<div class="map-box">
 		<div id="map"></div>
 		<script>
@@ -48,6 +51,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAPKEY'] %>&callback=initMap" async defer>
 		</script>
 	</div>
+	<!-- map -->
 </div>
 <div class="r-info-middle">
 	<div class="r-averages">
@@ -70,6 +74,7 @@
 	</div>
 </div>
 
+<!-- 投稿一覧 -->
 <div class="r-post-all">
  <h3>みんなの投稿</h3>
 
@@ -94,7 +99,6 @@
 		</tbody>
 
 	</table>
-
 
 </div>
 
