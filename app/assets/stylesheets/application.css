@@ -543,4 +543,7 @@ header {
     .fav-index .fav-inner .fav-index-td .fav-btns {
       display: flex; }
 
+.pagination {
+  text-align: center; }
+
 /*# sourceMappingURL=application.css.map */

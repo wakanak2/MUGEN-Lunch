@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
 
 	def index
 		@q = Restaurant.ransack(params[:q])
-		@restaurants = @q.result(distinct: true).page(params[:page])
+		@restaurants = @q.result(distinct: true).page(params[:page]).per(5)
 
 	end
 
@@ -57,7 +57,9 @@ class RestaurantsController < ApplicationController
 		if current_user.latitude.present?
 		latitude = current_user.latitude.to_f
 		longitude = current_user.longitude.to_f
-		@restaurants = Restaurant.within_box(0.621371, latitude, longitude).page(params[:page])
+		myrestaurants = Restaurant.within_box(0.621371, latitude, longitude)
+		@q = myrestaurants.ransack(params[:q])
+		@restaurants = @q.result.page(params[:page]).per(5)
 		else
 		redirect_to edit_user_path(current_user.id)
 		flash[:notice] = "My pointを登録してください。"
