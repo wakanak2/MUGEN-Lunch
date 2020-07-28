@@ -55,7 +55,7 @@ class RestaurantsController < ApplicationController
 		if current_user.latitude.present?
 		latitude = current_user.latitude.to_f
 		longitude = current_user.longitude.to_f
-		myrestaurants = Restaurant.within_box(0.621371, latitude, longitude)
+		myrestaurants = Restaurant.within_box(0.310685, latitude, longitude)
 		@q = myrestaurants.ransack(params[:q])
 		@restaurants = @q.result.page(params[:page]).per(5)
 		else

@@ -15,6 +15,10 @@ class Restaurant < ApplicationRecord
 	validates :standing, inclusion: { in: ["あり", "なし"] }
 	validates :closed, inclusion: { in: ["閉店済", "開業中"] }
 	validates :smoking,presence: true
+	validates :weekday_start, presence: { message: '必須項目です。' }
+    validates :weekday_finish, presence: { message: '必須項目です。' }
+    validates :weekend_start, presence: { message: '必須項目です。' }
+    validates :weekend_finish, presence: { message: '必須項目です。' }
 
 	# 住所の緯度経度取得
 	geocoded_by :address
@@ -54,7 +58,7 @@ class Restaurant < ApplicationRecord
   end
 
 
-
+  
 	ransacker :average do
 		Arel.sql('AVG("posts"."rate")')
 	end
