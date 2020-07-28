@@ -56,7 +56,13 @@
 						<tr>
 							<td><%= f.label :post_image, "画像" %></td>
 							<td>
-								<%= f.attachment_field :post_images_post_images , multiple: true %>
+								<% if post.post_images_post_images.empty? %>
+									<%= f.attachment_field :post_images_post_images , multiple: true %>
+								<% else %>
+									<% post.post_images.each do |post_image| %>
+										<%= attachment_image_tag post_image ,:post_image, size:"100x100"%>
+									<% end %>
+								<% end %>
 							</td>
 						</tr>
 
