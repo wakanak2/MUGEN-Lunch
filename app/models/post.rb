@@ -1,3 +1,4 @@
+
 class Post < ApplicationRecord
 
 	belongs_to :restaurant
@@ -7,6 +8,7 @@ class Post < ApplicationRecord
 	validates :comment, presence: true, length: { maximum: 200, message: '２００文字以下です。' }
 	validates :time, format: {with:/\A[0-9]+\z/, message: '半角数値で入力してください。'}
 	validates :price, format: {with:/\A[0-9]+\z/, message: '半角数値で入力してください。'}
+	validates :rate, presence: true
 
 
 	#post_image
