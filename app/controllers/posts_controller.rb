@@ -51,7 +51,11 @@ class PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@restaurant = @post.restaurant
+		if @post.user = current_user
 		@post.destroy
+		redirect_to restaurant_path(@restaurant)
+
+		else
 		redirect_to restaurant_path(@restaurant)
 	end
 
